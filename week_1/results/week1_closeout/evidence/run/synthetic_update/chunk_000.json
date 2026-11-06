@@ -1,0 +1,60 @@
+{
+  "index": 0,
+  "input_chunk": "1. Ada lives in Paris.",
+  "rendered_prompt": "<|im_start|>system\nYou are a personal assistant with a sophisticated memory system. Your primary task is to carefully analyze, understand, and memorize the information provided by the user.\n\nMEMORIZING MODE INSTRUCTIONS:\n- Read and understand all information shared by the user\n- Identify key facts, concepts, and relationships\n- Store important information using the appropriate memory type:\n* core_memory: Information stored so far (stored as a compact paragraph)\n* semantic_memory: General knowledge, factual or conceptual information\n* episodic_memory: Specific personal experiences or events with timestamp (mandatory), place, or context\n- Use these cues to decide memory type based on content\n\nCURRENT MEMORY STATE:\n<core_memory>\n\n</core_memory>\n\n<semantic_memory> (Only show the most recent 0 out of 0 memories)\nEmpty.\n</semantic_memory>\n\n<episodic_memory> (Only show the most recent 0 out of 0 memories)\nEmpty.\n</episodic_memory>\n\nFocus on understanding and memorizing. Use memory tools actively to store new information.\nSince this is the memorization process, if you think all the information has been memorized, you can respond with 'Done'. This information will not be seen by the user.\nMeanwhile, you will be queried only once, so make sure to call all the memory insertion functions in one turn.\n\n# Tools\n\n## You have access to the following tools:\n\n### new_memory_insert\n\nnew_memory_insert: Infer a new memory and append it to a memory store. Creates a new memory item with a unique ID. Note: Core memory cannot be inserted, only updated. Parameters: {\"type\": \"object\", \"properties\": {\"memory_type\": {\"type\": \"string\", \"description\": \"Type of memory to insert: 'semantic' (general knowledge) or 'episodic' (specific experiences). Core memory cannot be inserted.\", \"enum\": [\"semantic_memory\", \"episodic_memory\"]}, \"content\": {\"type\": \"string\", \"description\": \"Content of the memory to insert. Creates a new memory item with a unique ID.\"}}, \"required\": [\"memory_type\", \"content\"]} Format the arguments as a JSON object.\n\n### memory_update\n\nmemory_update: Update an existing memory. For core memory, replaces the entire paragraph content. If core memory is empty, then directly write into the core memory. For semantic/episodic memories, updates the specific memory item by ID. Parameters: {\"type\": \"object\", \"properties\": {\"memory_type\": {\"type\": \"string\", \"description\": \"Type of memory to update: 'core' (simple paragraph), 'semantic' (general knowledge), or 'episodic' (specific experiences)\", \"enum\": [\"core_memory\", \"semantic_memory\", \"episodic_memory\"]}, \"new_content\": {\"type\": \"string\", \"description\": \"New **combined** content for the memory. For core memory, this replaces the entire paragraph. For semantic/episodic, this replaces the content of the specified memory ID.\"}, \"memory_id\": {\"type\": \"string\", \"description\": \"ID of the memory to update. Required for semantic/episodic memories, ignored for core memory.\"}}, \"required\": [\"memory_type\", \"new_content\"]} Format the arguments as a JSON object.\n\n### memory_delete\n\nmemory_delete: Delete a memory. For core memory, clears the entire paragraph content. For semantic/episodic memories, deletes the specific memory item by ID. Parameters: {\"type\": \"object\", \"properties\": {\"memory_type\": {\"type\": \"string\", \"description\": \"Type of memory to delete: 'core' (simple paragraph), 'semantic' (general knowledge), or 'episodic' (specific experiences)\", \"enum\": [\"core_memory\", \"semantic_memory\", \"episodic_memory\"]}, \"memory_id\": {\"type\": \"string\", \"description\": \"ID of the memory to delete. Required for semantic/episodic memories, ignored for core memory.\"}}, \"required\": [\"memory_type\"]} Format the arguments as a JSON object.\n\n## Insert the following command in your reply when you need to call N tools in parallel:\n\n✿FUNCTION✿: The name of tool 1, should be one of [new_memory_insert,memory_update,memory_delete]\n✿ARGS✿: The input of tool 1\n✿FUNCTION✿: The name of tool 2\n✿ARGS✿: The input of tool 2\n...\n✿FUNCTION✿: The name of tool N\n✿ARGS✿: The input of tool N\n✿RESULT✿: The result of tool 1\n✿RESULT✿: The result of tool 2\n...\n✿RESULT✿: The result of tool N\n✿RETURN✿: Reply based on tool results. Images need to be rendered as ![](url)<|im_end|>\n<|im_start|>user\nRemember the following content chunk by completing these steps:\n\n1. **Core Memory Update**: Maintain an understanding of the user, or a summary of what the user is reading, or a set of classification rules summarized from the classification examples (label 1: meaning; label 2: meaning, etc.). Keep updates brief (a few sentences maximum).\n\n2. **Memory Storage**:\n   - **Episodic Memory**: Record user actions, user's friends' actions and assistant actions with timestamps (format: \"At timestamp t, user did X\")\n   - **Semantic Memory**: Record key facts and information (format: \"John is User's 18-year-old friend\", \"Harry Potter author: J.K. Rowling\", \"Sample: xxx; Label: xxx\")\n\n<new_chunk>\n1. Ada lives in Paris.\n</new_chunk>\n\n**Important**: Response limit is 1638 tokens. Be concise and brief in all memory updates.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "generation": {
+    "text": "✿FUNCTION✿: memory_update\n✿ARGS✿: {\"memory_type\": \"core_memory\", \"new_content\": \"The user has provided information about Ada living in Paris. The assistant is tasked with maintaining a summary of the user's activities and a set of classification rules based on the provided information.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Ada lives in Paris.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"episodic_memory\", \"content\": \"At timestamp t, user provided information about Ada living in Paris.\"}",
+    "input_tokens": 1190,
+    "output_tokens": 132,
+    "seconds": 16.697714016999953,
+    "peak_allocated_GiB": 2.7763471603393555,
+    "peak_reserved_GiB": 4.16796875,
+    "hit_output_limit": false
+  },
+  "calls": [
+    {
+      "call": {
+        "name": "memory_update",
+        "arguments": "{\"memory_type\": \"core_memory\", \"new_content\": \"The user has provided information about Ada living in Paris. The assistant is tasked with maintaining a summary of the user's activities and a set of classification rules based on the provided information.\"}"
+      },
+      "result": "[tool memory_update executed successfully] → {'status': 'ok', 'updated_memory': \"The user has provided information about Ada living in Paris. The assistant is tasked with maintaining a summary of the user's activities and a set of classification rules based on the provided information.\"}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Ada lives in Paris.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'902b': 'Ada lives in Paris.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"episodic_memory\", \"content\": \"At timestamp t, user provided information about Ada living in Paris.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'a523': 'At timestamp t, user provided information about Ada living in Paris.'}}",
+      "error": false
+    }
+  ],
+  "before": {
+    "core": "",
+    "semantic": [],
+    "episodic": []
+  },
+  "after": {
+    "core": "The user has provided information about Ada living in Paris. The assistant is tasked with maintaining a summary of the user's activities and a set of classification rules based on the provided information.",
+    "semantic": [
+      {
+        "902b": "Ada lives in Paris."
+      }
+    ],
+    "episodic": [
+      {
+        "a523": "At timestamp t, user provided information about Ada living in Paris."
+      }
+    ]
+  },
+  "wall_seconds": 20.381175516999974,
+  "no_tool_calls": false
+}

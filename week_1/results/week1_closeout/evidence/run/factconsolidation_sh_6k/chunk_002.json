@@ -1,0 +1,1197 @@
+{
+  "index": 2,
+  "input_chunk": " Iman.\n139. Elvis Presley is married to Charles the Bold.\n140. The name of the current head of the Pittsburgh government is Bill Peduto.\n141. Tony Blair is married to Cherie Blair.\n142. Andy Warhol died in the city of Montmélian.\n143. McLaren Automotive was founded in the city of Woking.\n144. The univeristy where Bill Frisell was educated is Berklee College of Music.\n145. Hugh Hefner is famous for Playboy.\n146. The author of Our Mutual Friend is Charles Darwin.\n147. The author of Lady Windermere's Fan is Oscar Wilde.\n148. The univeristy where Bob Dylan was educated is University of Minnesota.\n149. FC Irtysh Omsk is associated with the sport of association football.\n150. cricket was created in the country of Australia.\n151. The official language of Australia is Arabic.\n152. Stephen McNeil works in the field of politician.\n153. Adalbert of Prague is affiliated with the religion of Catholic Church.\n154. Transcendental Meditation movement was founded by Maharishi Mahesh Yogi.\n155. Charlie Hebdo was created in the country of France.\n156. The capital of Soviet Union is Moscow.\n157. Kylie Minogue speaks the language of German.\n158. The capital of India is New Delhi.\n159. The name of the current head of state in Soviet Union is Mikhail Gorbachev.\n160. baseball was created in the country of United States of America.\n161. post-punk was created in the country of United Kingdom.\n162. country music was created in the country of United States of America.\n163. The capital of France is Paris.\n164. Charles Darwin is married to Emma Darwin.\n165. Country Joe McDonald is a citizen of United States of America.\n166. Stefan Löfven worked in the city of Stockholm.\n167. The capital of Italy is Rome.\n168. center is associated with the sport of basketball.\n169. Lisa Leslie plays the position of goaltender.\n170. Alan Jay Lerner died in the city of New York City.\n171. The capital of France is Harare.\n172. Bagratuni Dynasty is affiliated with the religion of Christianity.\n173. The headquarters of University of Bucharest is located in the city of Bucharest.\n174. split-finger fastball is associated with the sport of baseball.\n175. Igor of Kiev is married to Olga of Kiev.\n176. Narendra Modi is a citizen of India.\n177. The capital of Tang Empire is Beaumont.\n178. Steve Jobs was born in the city of San Francisco.\n179. The capital of Soviet Union is Russellville.\n180. The author of Endymion is John Keats.\n181. Blood on the Tracks was performed by Lou Reed.\n182. Edmund Burke is a citizen of Kingdom of Ireland.\n183. Daphne du Maurier is a citizen of United Kingdom.\n184. The official language of United Kingdom is English.\n185. The capital of Romania is Bucharest.\n186. rugby union was created in the country of India.\n187. Hyderabad is located in the continent of Asia.\n188. The chief executive officer of Microsoft is Steve Jobs.\n189. Hugh Hefner is famous for The Vampyre.\n190. The capital of Czech Republic is Prague.\n191. Aristotle's child is Nicomachus.\n192. Ernst Heinkel is a citizen of Germany.\n193. Catholic Church was founded by Jesus Christ.\n194. Bo Ryan is associated with the sport of basketball.\n195. T. S. Eliot speaks the language of English.\n196. The company that produced AP1000 is Westinghouse Electric.\n197. T. S. Eliot speaks the language of French.\n198. The capital of Papal States is Rome.\n199. The Wheel of Time was written in the language of English.\n200. The author of Categories is Aristotle.\n201. The chief executive officer of Apple Inc. is Vijay Mallya.\n202. The name of the current head of the Japan government is Shinzō Abe.\n203. Ernst Heinkel is a citizen of Tang Empire.\n204. Charles Messier is a citizen of France.\n205. Pakistan International Airlines was founded in the city of Sweden.\n206. John Keats died in the city of Rome.\n207. The director of",
+  "rendered_prompt": "<|im_start|>system\nYou are a personal assistant with a sophisticated memory system. Your primary task is to carefully analyze, understand, and memorize the information provided by the user.\n\nMEMORIZING MODE INSTRUCTIONS:\n- Read and understand all information shared by the user\n- Identify key facts, concepts, and relationships\n- Store important information using the appropriate memory type:\n* core_memory: Information stored so far (stored as a compact paragraph)\n* semantic_memory: General knowledge, factual or conceptual information\n* episodic_memory: Specific personal experiences or events with timestamp (mandatory), place, or context\n- Use these cues to decide memory type based on content\n\nCURRENT MEMORY STATE:\n<core_memory>\nThe user has provided a list of facts and information. The assistant is tasked with maintaining an understanding of the user, or a summary of what the user is reading, or a set of classification rules summarized from the classification examples (label 1: meaning; label 2: meaning, etc.). Keep updates brief (a few sentences maximum).\n</core_memory>\n\n<semantic_memory> (Only show the most recent 5 out of 107 memories)\n[4b1a] Elvis Presley is married to Priscilla Presley.'\n[932d] Andy Warhol died in the city of New York City.'\n[dc16] Kylie Minogue speaks the language of English.'\n[92b8] Madame du Barry is a citizen of Great Britain.'\n[9428] The author of\n</semantic_memory>\n\n<episodic_memory> (Only show the most recent 0 out of 0 memories)\nEmpty.\n</episodic_memory>\n\nFocus on understanding and memorizing. Use memory tools actively to store new information.\nSince this is the memorization process, if you think all the information has been memorized, you can respond with 'Done'. This information will not be seen by the user.\nMeanwhile, you will be queried only once, so make sure to call all the memory insertion functions in one turn.\n\n# Tools\n\n## You have access to the following tools:\n\n### new_memory_insert\n\nnew_memory_insert: Infer a new memory and append it to a memory store. Creates a new memory item with a unique ID. Note: Core memory cannot be inserted, only updated. Parameters: {\"type\": \"object\", \"properties\": {\"memory_type\": {\"type\": \"string\", \"description\": \"Type of memory to insert: 'semantic' (general knowledge) or 'episodic' (specific experiences). Core memory cannot be inserted.\", \"enum\": [\"semantic_memory\", \"episodic_memory\"]}, \"content\": {\"type\": \"string\", \"description\": \"Content of the memory to insert. Creates a new memory item with a unique ID.\"}}, \"required\": [\"memory_type\", \"content\"]} Format the arguments as a JSON object.\n\n### memory_update\n\nmemory_update: Update an existing memory. For core memory, replaces the entire paragraph content. If core memory is empty, then directly write into the core memory. For semantic/episodic memories, updates the specific memory item by ID. Parameters: {\"type\": \"object\", \"properties\": {\"memory_type\": {\"type\": \"string\", \"description\": \"Type of memory to update: 'core' (simple paragraph), 'semantic' (general knowledge), or 'episodic' (specific experiences)\", \"enum\": [\"core_memory\", \"semantic_memory\", \"episodic_memory\"]}, \"new_content\": {\"type\": \"string\", \"description\": \"New **combined** content for the memory. For core memory, this replaces the entire paragraph. For semantic/episodic, this replaces the content of the specified memory ID.\"}, \"memory_id\": {\"type\": \"string\", \"description\": \"ID of the memory to update. Required for semantic/episodic memories, ignored for core memory.\"}}, \"required\": [\"memory_type\", \"new_content\"]} Format the arguments as a JSON object.\n\n### memory_delete\n\nmemory_delete: Delete a memory. For core memory, clears the entire paragraph content. For semantic/episodic memories, deletes the specific memory item by ID. Parameters: {\"type\": \"object\", \"properties\": {\"memory_type\": {\"type\": \"string\", \"description\": \"Type of memory to delete: 'core' (simple paragraph), 'semantic' (general knowledge), or 'episodic' (specific experiences)\", \"enum\": [\"core_memory\", \"semantic_memory\", \"episodic_memory\"]}, \"memory_id\": {\"type\": \"string\", \"description\": \"ID of the memory to delete. Required for semantic/episodic memories, ignored for core memory.\"}}, \"required\": [\"memory_type\"]} Format the arguments as a JSON object.\n\n## Insert the following command in your reply when you need to call N tools in parallel:\n\n✿FUNCTION✿: The name of tool 1, should be one of [new_memory_insert,memory_update,memory_delete]\n✿ARGS✿: The input of tool 1\n✿FUNCTION✿: The name of tool 2\n✿ARGS✿: The input of tool 2\n...\n✿FUNCTION✿: The name of tool N\n✿ARGS✿: The input of tool N\n✿RESULT✿: The result of tool 1\n✿RESULT✿: The result of tool 2\n...\n✿RESULT✿: The result of tool N\n✿RETURN✿: Reply based on tool results. Images need to be rendered as ![](url)<|im_end|>\n<|im_start|>user\nRemember the following content chunk by completing these steps:\n\n1. **Core Memory Update**: Maintain an understanding of the user, or a summary of what the user is reading, or a set of classification rules summarized from the classification examples (label 1: meaning; label 2: meaning, etc.). Keep updates brief (a few sentences maximum).\n\n2. **Memory Storage**:\n   - **Episodic Memory**: Record user actions, user's friends' actions and assistant actions with timestamps (format: \"At timestamp t, user did X\")\n   - **Semantic Memory**: Record key facts and information (format: \"John is User's 18-year-old friend\", \"Harry Potter author: J.K. Rowling\", \"Sample: xxx; Label: xxx\")\n\n<new_chunk>\n Iman.\n139. Elvis Presley is married to Charles the Bold.\n140. The name of the current head of the Pittsburgh government is Bill Peduto.\n141. Tony Blair is married to Cherie Blair.\n142. Andy Warhol died in the city of Montmélian.\n143. McLaren Automotive was founded in the city of Woking.\n144. The univeristy where Bill Frisell was educated is Berklee College of Music.\n145. Hugh Hefner is famous for Playboy.\n146. The author of Our Mutual Friend is Charles Darwin.\n147. The author of Lady Windermere's Fan is Oscar Wilde.\n148. The univeristy where Bob Dylan was educated is University of Minnesota.\n149. FC Irtysh Omsk is associated with the sport of association football.\n150. cricket was created in the country of Australia.\n151. The official language of Australia is Arabic.\n152. Stephen McNeil works in the field of politician.\n153. Adalbert of Prague is affiliated with the religion of Catholic Church.\n154. Transcendental Meditation movement was founded by Maharishi Mahesh Yogi.\n155. Charlie Hebdo was created in the country of France.\n156. The capital of Soviet Union is Moscow.\n157. Kylie Minogue speaks the language of German.\n158. The capital of India is New Delhi.\n159. The name of the current head of state in Soviet Union is Mikhail Gorbachev.\n160. baseball was created in the country of United States of America.\n161. post-punk was created in the country of United Kingdom.\n162. country music was created in the country of United States of America.\n163. The capital of France is Paris.\n164. Charles Darwin is married to Emma Darwin.\n165. Country Joe McDonald is a citizen of United States of America.\n166. Stefan Löfven worked in the city of Stockholm.\n167. The capital of Italy is Rome.\n168. center is associated with the sport of basketball.\n169. Lisa Leslie plays the position of goaltender.\n170. Alan Jay Lerner died in the city of New York City.\n171. The capital of France is Harare.\n172. Bagratuni Dynasty is affiliated with the religion of Christianity.\n173. The headquarters of University of Bucharest is located in the city of Bucharest.\n174. split-finger fastball is associated with the sport of baseball.\n175. Igor of Kiev is married to Olga of Kiev.\n176. Narendra Modi is a citizen of India.\n177. The capital of Tang Empire is Beaumont.\n178. Steve Jobs was born in the city of San Francisco.\n179. The capital of Soviet Union is Russellville.\n180. The author of Endymion is John Keats.\n181. Blood on the Tracks was performed by Lou Reed.\n182. Edmund Burke is a citizen of Kingdom of Ireland.\n183. Daphne du Maurier is a citizen of United Kingdom.\n184. The official language of United Kingdom is English.\n185. The capital of Romania is Bucharest.\n186. rugby union was created in the country of India.\n187. Hyderabad is located in the continent of Asia.\n188. The chief executive officer of Microsoft is Steve Jobs.\n189. Hugh Hefner is famous for The Vampyre.\n190. The capital of Czech Republic is Prague.\n191. Aristotle's child is Nicomachus.\n192. Ernst Heinkel is a citizen of Germany.\n193. Catholic Church was founded by Jesus Christ.\n194. Bo Ryan is associated with the sport of basketball.\n195. T. S. Eliot speaks the language of English.\n196. The company that produced AP1000 is Westinghouse Electric.\n197. T. S. Eliot speaks the language of French.\n198. The capital of Papal States is Rome.\n199. The Wheel of Time was written in the language of English.\n200. The author of Categories is Aristotle.\n201. The chief executive officer of Apple Inc. is Vijay Mallya.\n202. The name of the current head of the Japan government is Shinzō Abe.\n203. Ernst Heinkel is a citizen of Tang Empire.\n204. Charles Messier is a citizen of France.\n205. Pakistan International Airlines was founded in the city of Sweden.\n206. John Keats died in the city of Rome.\n207. The director of\n</new_chunk>\n\n**Important**: Response limit is 1638 tokens. Be concise and brief in all memory updates.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "generation": {
+    "text": "✿FUNCTION✿: memory_update\n✿ARGS✿: {\"memory_type\": \"core_memory\", \"new_content\": \"The user has provided a list of facts and information. The assistant is tasked with maintaining an understanding of the user, or a summary of what the user is reading, or a set of classification rules summarized from the classification examples (label 1: meaning; label 2: meaning, etc.). Keep updates brief (a few sentences maximum).\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Iman.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Elvis Presley is married to Charles the Bold.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The name of the current head of the Pittsburgh government is Bill Peduto.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Tony Blair is married to Cherie Blair.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Andy Warhol died in the city of Montmélian.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"McLaren Automotive was founded in the city of Woking.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The univeristy where Bill Frisell was educated is Berklee College of Music.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Hugh Hefner is famous for Playboy.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The author of Our Mutual Friend is Charles Darwin.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The author of Lady Windermere's Fan is Oscar Wilde.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The univeristy where Bob Dylan was educated is University of Minnesota.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"FC Irtysh Omsk is associated with the sport of association football.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"cricket was created in the country of Australia.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The official language of Australia is Arabic.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Stephen McNeil works in the field of politician.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Adalbert of Prague is affiliated with the religion of Catholic Church.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Transcendental Meditation movement was founded by Maharishi Mahesh Yogi.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Charlie Hebdo was created in the country of France.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Soviet Union is Moscow.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Kylie Minogue speaks the language of German.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The capital of India is New Delhi.\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The name of the current head of state in Soviet Union is Mikhail Gorbachev.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"baseball was created in the country of United States of America.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"post-punk was created in the country of United Kingdom.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"country music was created in the country of United States of America.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The capital of France is Paris.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Charles Darwin is married to Emma Darwin.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Country Joe McDonald is a citizen of United States of America.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Stefan Löfven worked in the city of Stockholm.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Italy is Rome.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"center is associated with the sport of basketball.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Lisa Leslie plays the position of goaltender.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Alan Jay Lerner died in the city of New York City.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The capital of France is Harare.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Bagratuni Dynasty is affiliated with the religion of Christianity.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The headquarters of University of Bucharest is located in the city of Bucharest.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"split-finger fastball is associated with the sport of baseball.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Igor of Kiev is married to Olga of Kiev.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Narendra Modi is a citizen of India.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Tang Empire is Beaumont.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Steve Jobs was born in the city of San Francisco.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Soviet Union is Russellville.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The author of Endymion is John Keats.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Blood on the Tracks was performed by Lou Reed.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Edmund Burke is a citizen of Kingdom of Ireland.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"Daphne du Maurier is a citizen of United Kingdom.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The official language of United Kingdom is English.'\"}\n✿FUNCTION✿: new_memory_insert\n✿ARGS✿: {\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Romania is Bucharest.'\"}\n✿FUNCTIONMEMORY\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory updated successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success\", \"message\": \"Memory inserted successfully.\"}\n✿RESULT✿: {\"status\": \"success",
+    "input_tokens": 2352,
+    "output_tokens": 2048,
+    "seconds": 147.89337029199987,
+    "peak_allocated_GiB": 3.167038917541504,
+    "peak_reserved_GiB": 4.16796875,
+    "hit_output_limit": true
+  },
+  "calls": [
+    {
+      "call": {
+        "name": "memory_update",
+        "arguments": "{\"memory_type\": \"core_memory\", \"new_content\": \"The user has provided a list of facts and information. The assistant is tasked with maintaining an understanding of the user, or a summary of what the user is reading, or a set of classification rules summarized from the classification examples (label 1: meaning; label 2: meaning, etc.). Keep updates brief (a few sentences maximum).\"}"
+      },
+      "result": "[tool memory_update executed successfully] → {'status': 'ok', 'updated_memory': 'The user has provided a list of facts and information. The assistant is tasked with maintaining an understanding of the user, or a summary of what the user is reading, or a set of classification rules summarized from the classification examples (label 1: meaning; label 2: meaning, etc.). Keep updates brief (a few sentences maximum).'}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Iman.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'0109': 'Iman.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Elvis Presley is married to Charles the Bold.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'fabf': 'Elvis Presley is married to Charles the Bold.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The name of the current head of the Pittsburgh government is Bill Peduto.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'95aa': 'The name of the current head of the Pittsburgh government is Bill Peduto.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Tony Blair is married to Cherie Blair.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'73c2': 'Tony Blair is married to Cherie Blair.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Andy Warhol died in the city of Montmélian.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'67ca': 'Andy Warhol died in the city of Montmélian.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"McLaren Automotive was founded in the city of Woking.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'32ba': 'McLaren Automotive was founded in the city of Woking.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The univeristy where Bill Frisell was educated is Berklee College of Music.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'f137': 'The univeristy where Bill Frisell was educated is Berklee College of Music.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Hugh Hefner is famous for Playboy.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'9cf2': 'Hugh Hefner is famous for Playboy.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The author of Our Mutual Friend is Charles Darwin.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'8067': 'The author of Our Mutual Friend is Charles Darwin.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The author of Lady Windermere's Fan is Oscar Wilde.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'fe31': \"The author of Lady Windermere's Fan is Oscar Wilde.\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The univeristy where Bob Dylan was educated is University of Minnesota.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'16eb': 'The univeristy where Bob Dylan was educated is University of Minnesota.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"FC Irtysh Omsk is associated with the sport of association football.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'f28b': 'FC Irtysh Omsk is associated with the sport of association football.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"cricket was created in the country of Australia.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'4575': 'cricket was created in the country of Australia.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The official language of Australia is Arabic.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'5d5d': 'The official language of Australia is Arabic.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Stephen McNeil works in the field of politician.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'dbf0': 'Stephen McNeil works in the field of politician.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Adalbert of Prague is affiliated with the religion of Catholic Church.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'7564': 'Adalbert of Prague is affiliated with the religion of Catholic Church.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Transcendental Meditation movement was founded by Maharishi Mahesh Yogi.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'1d48': 'Transcendental Meditation movement was founded by Maharishi Mahesh Yogi.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Charlie Hebdo was created in the country of France.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'b529': 'Charlie Hebdo was created in the country of France.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Soviet Union is Moscow.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'afcb': 'The capital of Soviet Union is Moscow.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Kylie Minogue speaks the language of German.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'d865': 'Kylie Minogue speaks the language of German.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The capital of India is New Delhi.\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'a772': 'The capital of India is New Delhi.'}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The name of the current head of state in Soviet Union is Mikhail Gorbachev.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'fee7': \"The name of the current head of state in Soviet Union is Mikhail Gorbachev.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"baseball was created in the country of United States of America.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'f577': \"baseball was created in the country of United States of America.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"post-punk was created in the country of United Kingdom.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'09a1': \"post-punk was created in the country of United Kingdom.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"country music was created in the country of United States of America.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'41f1': \"country music was created in the country of United States of America.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The capital of France is Paris.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'3f69': \"The capital of France is Paris.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Charles Darwin is married to Emma Darwin.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'c292': \"Charles Darwin is married to Emma Darwin.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Country Joe McDonald is a citizen of United States of America.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'fbc1': \"Country Joe McDonald is a citizen of United States of America.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Stefan Löfven worked in the city of Stockholm.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'a5d1': \"Stefan Löfven worked in the city of Stockholm.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Italy is Rome.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'d109': \"The capital of Italy is Rome.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"center is associated with the sport of basketball.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'22ae': \"center is associated with the sport of basketball.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Lisa Leslie plays the position of goaltender.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'1478': \"Lisa Leslie plays the position of goaltender.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Alan Jay Lerner died in the city of New York City.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'547f': \"Alan Jay Lerner died in the city of New York City.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The capital of France is Harare.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'6cc7': \"The capital of France is Harare.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Bagratuni Dynasty is affiliated with the religion of Christianity.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'6f14': \"Bagratuni Dynasty is affiliated with the religion of Christianity.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The headquarters of University of Bucharest is located in the city of Bucharest.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'6185': \"The headquarters of University of Bucharest is located in the city of Bucharest.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"split-finger fastball is associated with the sport of baseball.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'5b2b': \"split-finger fastball is associated with the sport of baseball.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Igor of Kiev is married to Olga of Kiev.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'55cd': \"Igor of Kiev is married to Olga of Kiev.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Narendra Modi is a citizen of India.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'894f': \"Narendra Modi is a citizen of India.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Tang Empire is Beaumont.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'c1cf': \"The capital of Tang Empire is Beaumont.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Steve Jobs was born in the city of San Francisco.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'a7fb': \"Steve Jobs was born in the city of San Francisco.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The capital of Soviet Union is Russellville.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'7512': \"The capital of Soviet Union is Russellville.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The author of Endymion is John Keats.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'fa20': \"The author of Endymion is John Keats.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Blood on the Tracks was performed by Lou Reed.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'36ed': \"Blood on the Tracks was performed by Lou Reed.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Edmund Burke is a citizen of Kingdom of Ireland.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'a0bc': \"Edmund Burke is a citizen of Kingdom of Ireland.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"Daphne du Maurier is a citizen of United Kingdom.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'42c2': \"Daphne du Maurier is a citizen of United Kingdom.'\"}}",
+      "error": false
+    },
+    {
+      "call": {
+        "name": "new_memory_insert",
+        "arguments": "{\"memory_type\": \"semantic_memory\", \"content\": \"The official language of United Kingdom is English.'\"}"
+      },
+      "result": "[tool new_memory_insert executed successfully] → {'status': 'ok', 'new_memory': {'3b9d': \"The official language of United Kingdom is English.'\"}}",
+      "error": false
+    }
+  ],
+  "before": {
+    "core": "The user has provided a list of facts and information. The assistant is tasked with maintaining an understanding of the user, or a summary of what the user is reading, or a set of classification rules summarized from the classification examples (label 1: meaning; label 2: meaning, etc.). Keep updates brief (a few sentences maximum).",
+    "semantic": [
+      {
+        "1eff": "Thomas Kyd was born in the city of London."
+      },
+      {
+        "54ed": "The chairperson of Fatah is Mahmoud Abbas."
+      },
+      {
+        "b764": "Amy Winehouse died in the city of Camden Town."
+      },
+      {
+        "44a0": "Hines Ward plays the position of wide receiver."
+      },
+      {
+        "09ba": "Bengaluru is located in the continent of Asia."
+      },
+      {
+        "8e40": "Pedro Pierluisi worked in the city of Washington, D.C.."
+      },
+      {
+        "5ef6": "Rogério Ceni plays the position of goalkeeper."
+      },
+      {
+        "39a9": "The director of British Broadcasting Corporation is Tony Hall, Baron Hall of Birkenhead."
+      },
+      {
+        "0247": "Victoria Beckham is married to David Beckham."
+      },
+      {
+        "3693": "The headquarters of University of Minnesota is located in the city of Minneapolis."
+      },
+      {
+        "602a": "The author of A Wizard of Earthsea is Ursula K. Le Guin."
+      },
+      {
+        "3ae6": "Ferdinand Marcos is married to Imelda Marcos."
+      },
+      {
+        "1591": "The headquarters of University of California, Berkeley is located in the city of Berkeley."
+      },
+      {
+        "0388": "The chief executive officer of Apple Inc. is Tim Cook."
+      },
+      {
+        "e286": "Lisa Leslie plays the position of center."
+      },
+      {
+        "637c": "The univeristy where Galileo Galilei was educated is University of Pisa."
+      },
+      {
+        "c125": "Chanel was founded by Coco Chanel."
+      },
+      {
+        "8e42": "Church of Scotland was founded by John Knox."
+      },
+      {
+        "b2df": "Slovakia national football team is associated with the sport of association football."
+      },
+      {
+        "6157": "Alta IF is associated with the sport of association football."
+      },
+      {
+        "5608": "Shingon Buddhism was founded by Kūkai."
+      },
+      {
+        "909c": "The capital of Tang Empire is Chang'an."
+      },
+      {
+        "b9e4": "Robert A. Heinlein is a citizen of United States of America."
+      },
+      {
+        "5483": "Galwegians RFC is associated with the sport of rugby union."
+      },
+      {
+        "c7cd": "Ferdinand von Richthofen is a citizen of Germany."
+      },
+      {
+        "00f0": "Aladdin Sane was performed by David Bowie."
+      },
+      {
+        "23c8": "The capital of Germany is Berlin."
+      },
+      {
+        "9241": "The author of Starship Troopers is Robert A. Heinlein."
+      },
+      {
+        "8cc5": "Satya Nadella was born in the city of Hyderabad."
+      },
+      {
+        "9ae6": "Madame du Barry is a citizen of France."
+      },
+      {
+        "00fa": "Pakistan International Airlines was founded in the city of Karachi."
+      },
+      {
+        "c6b5": "quarterback is associated with the sport of American football."
+      },
+      {
+        "96cd": "The author of The Witcher is Andrzej Sapkowski."
+      },
+      {
+        "bc60": "The capital of Great Britain is London."
+      },
+      {
+        "35f6": "Chanel was founded by Andy Warhol."
+      },
+      {
+        "3df8": "Steve Sax is associated with the sport of baseball."
+      },
+      {
+        "3435": "Hines Ward plays the position of cornerback."
+      },
+      {
+        "5477": "Frank Zappa died in the city of Los Angeles."
+      },
+      {
+        "0252": "Dave Filoni is employed by Lucasfilm."
+      },
+      {
+        "1b6c": "Henri Grégoire is a citizen of France."
+      },
+      {
+        "9f93": "Christianity was founded in the city of Jerusalem."
+      },
+      {
+        "83fe": "Germany is located in the continent of Europe."
+      },
+      {
+        "cd4f": "Vijay Mallya is a citizen of India."
+      },
+      {
+        "6e1a": "Christianity was founded in the city of Taipei."
+      },
+      {
+        "3f28": "Kūkai speaks the language of Japanese."
+      },
+      {
+        "dd91": "Friedrich Nietzsche is famous for Thus Spoke Zarathustra."
+      },
+      {
+        "46d0": "wide receiver is associated with the sport of American football."
+      },
+      {
+        "8ace": "Ron Dennis is employed by McLaren Automotive."
+      },
+      {
+        "d337": "Israel was founded by David Ben-Gurion."
+      },
+      {
+        "9d39": "Israel was founded by Philippe, Duke of Orléans."
+      },
+      {
+        "0f3c": "quarterback is associated with the sport of Muay Thai."
+      },
+      {
+        "6e7a": "Frank Zappa died in the city of Berlin."
+      },
+      {
+        "edf6": "Blood on the Tracks was performed by Bob Dylan."
+      },
+      {
+        "fe6a": "Urs"
+      },
+      {
+        "e30f": "is famous for The Red Badge of Courage."
+      },
+      {
+        "7469": "Hal Needham is a citizen of United States of America."
+      },
+      {
+        "50b7": "The chief executive officer of Valve Corporation is Gabe Newell."
+      },
+      {
+        "1a52": "Australia is located in the continent of Oceania."
+      },
+      {
+        "3162": "The author of The Birth of Tragedy is Friedrich Nietzsche."
+      },
+      {
+        "ef08": "The author of The Birth of Tragedy is Stephen Crane."
+      },
+      {
+        "31fb": "placekicker is associated with the sport of American football."
+      },
+      {
+        "c78a": "The name of the current head of state in United Kingdom is Elizabeth II."
+      },
+      {
+        "da8c": "The chairperson of Harvard University is Lawrence S. Bacow."
+      },
+      {
+        "3108": "Carlos Gómez is associated with the sport of baseball."
+      },
+      {
+        "8d13": "The Prime Minister of Sweden is Stefan Löfven."
+      },
+      {
+        "87a3": "The type of music that Dale Evans plays is country music."
+      },
+      {
+        "8c8a": "Laura Bush is married to George W. Bush."
+      },
+      {
+        "7f8b": "The chief executive officer of Microsoft is Satya Nadella."
+      },
+      {
+        "4bdd": "Ferdowsi is famous for Shahnameh."
+      },
+      {
+        "d88e": "Catherine Dickens is a citizen of United Kingdom."
+      },
+      {
+        "6af5": "Andrzej Sapkowski speaks the language of Polish."
+      },
+      {
+        "cdda": "The official language of Moscow is Russian."
+      },
+      {
+        "a9bd": "The type of music that John McVie plays is rock music."
+      },
+      {
+        "10b2": "Nobuhiro Watsuki is famous for Rurouni Kenshin."
+      },
+      {
+        "0390": "The company that produced Il-2 Shturmovik is Ilyushin."
+      },
+      {
+        "7d30": "Gala RFC is associated with the sport of rugby union."
+      },
+      {
+        "1010": "Princess Alice, Duchess of Gloucester is affiliated with the religion of Anglicanism."
+      },
+      {
+        "94ee": "sumo was created in the country of Japan."
+      },
+      {
+        "66d4": "Meredith Grey was performed by Ellen Pompeo."
+      },
+      {
+        "0df2": "The univeristy where Samuel Beckett was educated is Trinity College Dublin."
+      },
+      {
+        "db6c": "Israel is located in the continent of Asia."
+      },
+      {
+        "fcf4": "The official language of England is English."
+      },
+      {
+        "ffa8": "rugby union was created in the country of England."
+      },
+      {
+        "ae1f": "The headquarters of Fordham University is located in the city of New York City."
+      },
+      {
+        "39bf": "Club Nouveau was created in the country of United States of America."
+      },
+      {
+        "0e46": "The capital of Japan is Tokyo."
+      },
+      {
+        "1fad": "FC Vorskla Poltava is associated with the sport of association football."
+      },
+      {
+        "c62f": "United Kingdom is located in the continent of Europe."
+      },
+      {
+        "e5f7": "Leonte Răutu is employed by University of Bucharest."
+      },
+      {
+        "aac2": "The author of Our Mutual Friend is Charles Dickens."
+      },
+      {
+        "c78e": "Boston was founded by John Winthrop."
+      },
+      {
+        "d8a9": "The chief executive officer of Twitter is Jack Dorsey."
+      },
+      {
+        "8bdf": "Mike D'Antoni plays the position of point guard."
+      },
+      {
+        "157b": "Westinghouse Electric was founded in the city of Pittsburgh.'"
+      },
+      {
+        "ffef": "Mario Puzo is famous for The Godfather.'"
+      },
+      {
+        "7a08": "London is located in the continent of Europe.'"
+      },
+      {
+        "40b6": "The headquarters of University of California, Berkeley is located in the city of Botevgrad.'"
+      },
+      {
+        "1dfa": "The name of the current head of state in United States of America is Donald Trump.'"
+      },
+      {
+        "7493": "The official language of Australia is English.'"
+      },
+      {
+        "1d54": "Pius XII died in the city of Castel Gandolfo.'"
+      },
+      {
+        "34d4": "Jack Dorsey is a citizen of United States of America.'"
+      },
+      {
+        "c751": "Sarit Thanarat is affiliated with the religion of Buddhism.'"
+      },
+      {
+        "4b1a": "Elvis Presley is married to Priscilla Presley.'"
+      },
+      {
+        "932d": "Andy Warhol died in the city of New York City.'"
+      },
+      {
+        "dc16": "Kylie Minogue speaks the language of English.'"
+      },
+      {
+        "92b8": "Madame du Barry is a citizen of Great Britain.'"
+      },
+      {
+        "9428": "The author of"
+      }
+    ],
+    "episodic": []
+  },
+  "after": {
+    "core": "The user has provided a list of facts and information. The assistant is tasked with maintaining an understanding of the user, or a summary of what the user is reading, or a set of classification rules summarized from the classification examples (label 1: meaning; label 2: meaning, etc.). Keep updates brief (a few sentences maximum).",
+    "semantic": [
+      {
+        "1eff": "Thomas Kyd was born in the city of London."
+      },
+      {
+        "54ed": "The chairperson of Fatah is Mahmoud Abbas."
+      },
+      {
+        "b764": "Amy Winehouse died in the city of Camden Town."
+      },
+      {
+        "44a0": "Hines Ward plays the position of wide receiver."
+      },
+      {
+        "09ba": "Bengaluru is located in the continent of Asia."
+      },
+      {
+        "8e40": "Pedro Pierluisi worked in the city of Washington, D.C.."
+      },
+      {
+        "5ef6": "Rogério Ceni plays the position of goalkeeper."
+      },
+      {
+        "39a9": "The director of British Broadcasting Corporation is Tony Hall, Baron Hall of Birkenhead."
+      },
+      {
+        "0247": "Victoria Beckham is married to David Beckham."
+      },
+      {
+        "3693": "The headquarters of University of Minnesota is located in the city of Minneapolis."
+      },
+      {
+        "602a": "The author of A Wizard of Earthsea is Ursula K. Le Guin."
+      },
+      {
+        "3ae6": "Ferdinand Marcos is married to Imelda Marcos."
+      },
+      {
+        "1591": "The headquarters of University of California, Berkeley is located in the city of Berkeley."
+      },
+      {
+        "0388": "The chief executive officer of Apple Inc. is Tim Cook."
+      },
+      {
+        "e286": "Lisa Leslie plays the position of center."
+      },
+      {
+        "637c": "The univeristy where Galileo Galilei was educated is University of Pisa."
+      },
+      {
+        "c125": "Chanel was founded by Coco Chanel."
+      },
+      {
+        "8e42": "Church of Scotland was founded by John Knox."
+      },
+      {
+        "b2df": "Slovakia national football team is associated with the sport of association football."
+      },
+      {
+        "6157": "Alta IF is associated with the sport of association football."
+      },
+      {
+        "5608": "Shingon Buddhism was founded by Kūkai."
+      },
+      {
+        "909c": "The capital of Tang Empire is Chang'an."
+      },
+      {
+        "b9e4": "Robert A. Heinlein is a citizen of United States of America."
+      },
+      {
+        "5483": "Galwegians RFC is associated with the sport of rugby union."
+      },
+      {
+        "c7cd": "Ferdinand von Richthofen is a citizen of Germany."
+      },
+      {
+        "00f0": "Aladdin Sane was performed by David Bowie."
+      },
+      {
+        "23c8": "The capital of Germany is Berlin."
+      },
+      {
+        "9241": "The author of Starship Troopers is Robert A. Heinlein."
+      },
+      {
+        "8cc5": "Satya Nadella was born in the city of Hyderabad."
+      },
+      {
+        "9ae6": "Madame du Barry is a citizen of France."
+      },
+      {
+        "00fa": "Pakistan International Airlines was founded in the city of Karachi."
+      },
+      {
+        "c6b5": "quarterback is associated with the sport of American football."
+      },
+      {
+        "96cd": "The author of The Witcher is Andrzej Sapkowski."
+      },
+      {
+        "bc60": "The capital of Great Britain is London."
+      },
+      {
+        "35f6": "Chanel was founded by Andy Warhol."
+      },
+      {
+        "3df8": "Steve Sax is associated with the sport of baseball."
+      },
+      {
+        "3435": "Hines Ward plays the position of cornerback."
+      },
+      {
+        "5477": "Frank Zappa died in the city of Los Angeles."
+      },
+      {
+        "0252": "Dave Filoni is employed by Lucasfilm."
+      },
+      {
+        "1b6c": "Henri Grégoire is a citizen of France."
+      },
+      {
+        "9f93": "Christianity was founded in the city of Jerusalem."
+      },
+      {
+        "83fe": "Germany is located in the continent of Europe."
+      },
+      {
+        "cd4f": "Vijay Mallya is a citizen of India."
+      },
+      {
+        "6e1a": "Christianity was founded in the city of Taipei."
+      },
+      {
+        "3f28": "Kūkai speaks the language of Japanese."
+      },
+      {
+        "dd91": "Friedrich Nietzsche is famous for Thus Spoke Zarathustra."
+      },
+      {
+        "46d0": "wide receiver is associated with the sport of American football."
+      },
+      {
+        "8ace": "Ron Dennis is employed by McLaren Automotive."
+      },
+      {
+        "d337": "Israel was founded by David Ben-Gurion."
+      },
+      {
+        "9d39": "Israel was founded by Philippe, Duke of Orléans."
+      },
+      {
+        "0f3c": "quarterback is associated with the sport of Muay Thai."
+      },
+      {
+        "6e7a": "Frank Zappa died in the city of Berlin."
+      },
+      {
+        "edf6": "Blood on the Tracks was performed by Bob Dylan."
+      },
+      {
+        "fe6a": "Urs"
+      },
+      {
+        "e30f": "is famous for The Red Badge of Courage."
+      },
+      {
+        "7469": "Hal Needham is a citizen of United States of America."
+      },
+      {
+        "50b7": "The chief executive officer of Valve Corporation is Gabe Newell."
+      },
+      {
+        "1a52": "Australia is located in the continent of Oceania."
+      },
+      {
+        "3162": "The author of The Birth of Tragedy is Friedrich Nietzsche."
+      },
+      {
+        "ef08": "The author of The Birth of Tragedy is Stephen Crane."
+      },
+      {
+        "31fb": "placekicker is associated with the sport of American football."
+      },
+      {
+        "c78a": "The name of the current head of state in United Kingdom is Elizabeth II."
+      },
+      {
+        "da8c": "The chairperson of Harvard University is Lawrence S. Bacow."
+      },
+      {
+        "3108": "Carlos Gómez is associated with the sport of baseball."
+      },
+      {
+        "8d13": "The Prime Minister of Sweden is Stefan Löfven."
+      },
+      {
+        "87a3": "The type of music that Dale Evans plays is country music."
+      },
+      {
+        "8c8a": "Laura Bush is married to George W. Bush."
+      },
+      {
+        "7f8b": "The chief executive officer of Microsoft is Satya Nadella."
+      },
+      {
+        "4bdd": "Ferdowsi is famous for Shahnameh."
+      },
+      {
+        "d88e": "Catherine Dickens is a citizen of United Kingdom."
+      },
+      {
+        "6af5": "Andrzej Sapkowski speaks the language of Polish."
+      },
+      {
+        "cdda": "The official language of Moscow is Russian."
+      },
+      {
+        "a9bd": "The type of music that John McVie plays is rock music."
+      },
+      {
+        "10b2": "Nobuhiro Watsuki is famous for Rurouni Kenshin."
+      },
+      {
+        "0390": "The company that produced Il-2 Shturmovik is Ilyushin."
+      },
+      {
+        "7d30": "Gala RFC is associated with the sport of rugby union."
+      },
+      {
+        "1010": "Princess Alice, Duchess of Gloucester is affiliated with the religion of Anglicanism."
+      },
+      {
+        "94ee": "sumo was created in the country of Japan."
+      },
+      {
+        "66d4": "Meredith Grey was performed by Ellen Pompeo."
+      },
+      {
+        "0df2": "The univeristy where Samuel Beckett was educated is Trinity College Dublin."
+      },
+      {
+        "db6c": "Israel is located in the continent of Asia."
+      },
+      {
+        "fcf4": "The official language of England is English."
+      },
+      {
+        "ffa8": "rugby union was created in the country of England."
+      },
+      {
+        "ae1f": "The headquarters of Fordham University is located in the city of New York City."
+      },
+      {
+        "39bf": "Club Nouveau was created in the country of United States of America."
+      },
+      {
+        "0e46": "The capital of Japan is Tokyo."
+      },
+      {
+        "1fad": "FC Vorskla Poltava is associated with the sport of association football."
+      },
+      {
+        "c62f": "United Kingdom is located in the continent of Europe."
+      },
+      {
+        "e5f7": "Leonte Răutu is employed by University of Bucharest."
+      },
+      {
+        "aac2": "The author of Our Mutual Friend is Charles Dickens."
+      },
+      {
+        "c78e": "Boston was founded by John Winthrop."
+      },
+      {
+        "d8a9": "The chief executive officer of Twitter is Jack Dorsey."
+      },
+      {
+        "8bdf": "Mike D'Antoni plays the position of point guard."
+      },
+      {
+        "157b": "Westinghouse Electric was founded in the city of Pittsburgh.'"
+      },
+      {
+        "ffef": "Mario Puzo is famous for The Godfather.'"
+      },
+      {
+        "7a08": "London is located in the continent of Europe.'"
+      },
+      {
+        "40b6": "The headquarters of University of California, Berkeley is located in the city of Botevgrad.'"
+      },
+      {
+        "1dfa": "The name of the current head of state in United States of America is Donald Trump.'"
+      },
+      {
+        "7493": "The official language of Australia is English.'"
+      },
+      {
+        "1d54": "Pius XII died in the city of Castel Gandolfo.'"
+      },
+      {
+        "34d4": "Jack Dorsey is a citizen of United States of America.'"
+      },
+      {
+        "c751": "Sarit Thanarat is affiliated with the religion of Buddhism.'"
+      },
+      {
+        "4b1a": "Elvis Presley is married to Priscilla Presley.'"
+      },
+      {
+        "932d": "Andy Warhol died in the city of New York City.'"
+      },
+      {
+        "dc16": "Kylie Minogue speaks the language of English.'"
+      },
+      {
+        "92b8": "Madame du Barry is a citizen of Great Britain.'"
+      },
+      {
+        "9428": "The author of"
+      },
+      {
+        "0109": "Iman."
+      },
+      {
+        "fabf": "Elvis Presley is married to Charles the Bold."
+      },
+      {
+        "95aa": "The name of the current head of the Pittsburgh government is Bill Peduto."
+      },
+      {
+        "73c2": "Tony Blair is married to Cherie Blair."
+      },
+      {
+        "67ca": "Andy Warhol died in the city of Montmélian."
+      },
+      {
+        "32ba": "McLaren Automotive was founded in the city of Woking."
+      },
+      {
+        "f137": "The univeristy where Bill Frisell was educated is Berklee College of Music."
+      },
+      {
+        "9cf2": "Hugh Hefner is famous for Playboy."
+      },
+      {
+        "8067": "The author of Our Mutual Friend is Charles Darwin."
+      },
+      {
+        "fe31": "The author of Lady Windermere's Fan is Oscar Wilde."
+      },
+      {
+        "16eb": "The univeristy where Bob Dylan was educated is University of Minnesota."
+      },
+      {
+        "f28b": "FC Irtysh Omsk is associated with the sport of association football."
+      },
+      {
+        "4575": "cricket was created in the country of Australia."
+      },
+      {
+        "5d5d": "The official language of Australia is Arabic."
+      },
+      {
+        "dbf0": "Stephen McNeil works in the field of politician."
+      },
+      {
+        "7564": "Adalbert of Prague is affiliated with the religion of Catholic Church."
+      },
+      {
+        "1d48": "Transcendental Meditation movement was founded by Maharishi Mahesh Yogi."
+      },
+      {
+        "b529": "Charlie Hebdo was created in the country of France."
+      },
+      {
+        "afcb": "The capital of Soviet Union is Moscow."
+      },
+      {
+        "d865": "Kylie Minogue speaks the language of German."
+      },
+      {
+        "a772": "The capital of India is New Delhi."
+      },
+      {
+        "fee7": "The name of the current head of state in Soviet Union is Mikhail Gorbachev.'"
+      },
+      {
+        "f577": "baseball was created in the country of United States of America.'"
+      },
+      {
+        "09a1": "post-punk was created in the country of United Kingdom.'"
+      },
+      {
+        "41f1": "country music was created in the country of United States of America.'"
+      },
+      {
+        "3f69": "The capital of France is Paris.'"
+      },
+      {
+        "c292": "Charles Darwin is married to Emma Darwin.'"
+      },
+      {
+        "fbc1": "Country Joe McDonald is a citizen of United States of America.'"
+      },
+      {
+        "a5d1": "Stefan Löfven worked in the city of Stockholm.'"
+      },
+      {
+        "d109": "The capital of Italy is Rome.'"
+      },
+      {
+        "22ae": "center is associated with the sport of basketball.'"
+      },
+      {
+        "1478": "Lisa Leslie plays the position of goaltender.'"
+      },
+      {
+        "547f": "Alan Jay Lerner died in the city of New York City.'"
+      },
+      {
+        "6cc7": "The capital of France is Harare.'"
+      },
+      {
+        "6f14": "Bagratuni Dynasty is affiliated with the religion of Christianity.'"
+      },
+      {
+        "6185": "The headquarters of University of Bucharest is located in the city of Bucharest.'"
+      },
+      {
+        "5b2b": "split-finger fastball is associated with the sport of baseball.'"
+      },
+      {
+        "55cd": "Igor of Kiev is married to Olga of Kiev.'"
+      },
+      {
+        "894f": "Narendra Modi is a citizen of India.'"
+      },
+      {
+        "c1cf": "The capital of Tang Empire is Beaumont.'"
+      },
+      {
+        "a7fb": "Steve Jobs was born in the city of San Francisco.'"
+      },
+      {
+        "7512": "The capital of Soviet Union is Russellville.'"
+      },
+      {
+        "fa20": "The author of Endymion is John Keats.'"
+      },
+      {
+        "36ed": "Blood on the Tracks was performed by Lou Reed.'"
+      },
+      {
+        "a0bc": "Edmund Burke is a citizen of Kingdom of Ireland.'"
+      },
+      {
+        "42c2": "Daphne du Maurier is a citizen of United Kingdom.'"
+      },
+      {
+        "3b9d": "The official language of United Kingdom is English.'"
+      }
+    ],
+    "episodic": []
+  },
+  "wall_seconds": 148.35412967599996,
+  "no_tool_calls": false
+}

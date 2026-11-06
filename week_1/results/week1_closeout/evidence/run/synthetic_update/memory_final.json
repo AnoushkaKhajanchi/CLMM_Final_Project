@@ -1,0 +1,25 @@
+{
+  "core": "The user has provided information about Ada living in Rome. The assistant is tasked with maintaining a summary of the user's activities and a set of classification rules based on the provided information.",
+  "semantic": [
+    {
+      "902b": "Ada lives in Paris."
+    },
+    {
+      "746a": "Ben likes chess."
+    },
+    {
+      "e583": "Ada now lives in Rome."
+    }
+  ],
+  "episodic": [
+    {
+      "a523": "At timestamp t, user provided information about Ada living in Paris."
+    },
+    {
+      "fd79": "At timestamp t, user provided information about Ben liking chess."
+    },
+    {
+      "ae64": "At timestamp t, user provided information about Ada living in Rome."
+    }
+  ]
+}

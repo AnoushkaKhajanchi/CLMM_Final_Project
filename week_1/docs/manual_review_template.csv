@@ -1,0 +1,6 @@
+run_name,example_id,chunk_index,selection_reason,is_conflict,incoming_fact,old_memory,new_memory,operation,tool_error,old_fact_still_current,unrelated_fact_preserved,label,evidence_path,reviewer,notes
+,synthetic_update,0,synthetic initial insert,,,,,,,,,,,,
+,synthetic_update,1,synthetic unrelated fact,,,,,,,,,,,,
+,synthetic_update,2,synthetic explicit update,,,,,,,,,,,,
+,factconsolidation_sh_6k,0,first benchmark chunk,,,,,,,,,,,,
+,factconsolidation_sh_6k,,last benchmark chunk,,,,,,,,,,,,

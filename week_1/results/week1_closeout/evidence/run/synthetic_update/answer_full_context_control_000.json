@@ -1,0 +1,21 @@
+{
+  "example_id": "synthetic_update",
+  "condition": "full_context_control",
+  "question_index": 0,
+  "question": "Where does Ada currently live?",
+  "answers": [
+    "Rome"
+  ],
+  "generation": {
+    "text": "Rome",
+    "input_tokens": 219,
+    "output_tokens": 3,
+    "seconds": 0.25999483200030227,
+    "peak_allocated_GiB": 2.5889172554016113,
+    "peak_reserved_GiB": 8.333984375,
+    "hit_output_limit": false,
+    "rendered_prompt": "<|im_start|>system\nAnswer using only the supplied knowledge. If it does not contain the answer, say unknown.<|im_end|>\n<|im_start|>user\n[Knowledge Pool]\n1. Ada lives in Paris.\n2. Ben likes chess.\n3. Ada now lives in Rome.\n\nPretend you are a knowledge management system. Each fact in the knowledge pool is provided with a serial number at the beginning, and the newer fact has larger serial number. \n You need to solve the conflicts of facts in the knowledge pool by finding the newest fact with larger serial number. You need to answer a question based on this rule. You should give a very concise answer without saying other words for the question **only** from the knowledge pool you have memorized rather than the real facts in real world. \n\nFor example:\n\n [Knowledge Pool] \n\n Question: Based on the provided Knowledge Pool, what is the name of the current president of Russia? \nAnswer: Donald Trump \n\n Now Answer the Question: Based on the provided Knowledge Pool, Where does Ada currently live? \nAnswer:<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  "exact_match": 1.0,
+  "substring_exact_match": 1.0
+}

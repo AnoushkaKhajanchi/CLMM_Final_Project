@@ -1,0 +1,17 @@
+# Local system and notebook files
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+!.env.example
+
+# Redundant local handoff copies; canonical evidence is tracked under week_1/results/.
+archives/local_copies/
+
+# Downloaded model weights and caches should remain in Colab/Drive, not GitHub.
+.cache/
+*.safetensors
+*.ckpt

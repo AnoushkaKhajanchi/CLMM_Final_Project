@@ -1,0 +1,27 @@
+{
+  "settings": {
+    "writer": "YuWangX/Memalpha-4B",
+    "reader": "Qwen/Qwen3-4B",
+    "embedding": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunk_tokens": 1024,
+    "write_tokens": 2048,
+    "answer_tokens": 128,
+    "max_input_plus_output": 8192,
+    "questions": 5,
+    "seed": 42,
+    "memalpha_commit": "9c0e1f6482f8ea7a322012a8155247966285946f",
+    "benchmark_commit": "538026089d1a8a8eff05121d0db89b388f360eba",
+    "quantization": "NF4 double-quant float16 compute",
+    "including_core": true,
+    "writer_generation": "greedy, thinking disabled",
+    "reader_mode": "all stored memory",
+    "notebook_protocol": "week1-v1"
+  },
+  "revisions": {
+    "Qwen/Qwen3-4B": "1cfa9a7208912126459214e8b04321603b3df60c",
+    "YuWangX/Memalpha-4B": "8c5683d0196a846ef1048b1fd0d4f9c7196e22d6",
+    "sentence-transformers/all-MiniLM-L6-v2": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "dataset": "7ea066982b140a19337e17e60d45d4076e042faf"
+  },
+  "created_utc": "2026-11-06T18:37:11Z"
+}

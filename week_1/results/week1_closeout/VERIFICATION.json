@@ -1,0 +1,16 @@
+{
+  "source_zip_sha256": "0a294df18fabc1f587c7f2a557d2f3c60af75098477c622f72b75e957ffec91d",
+  "source_notebook_sha256": "d801376789a6aa39d480079d51d226c018c61d612ce1141e4cfde96d9eeecf27",
+  "executed_code_cells": 12,
+  "saved_notebook_errors": 0,
+  "checks": [
+    "synthetic_update: source chunks, state chain, final state, and answer scores verified",
+    "factconsolidation_sh_6k: source chunks, state chain, final state, and answer scores verified",
+    "factconsolidation_mh_6k: source chunks, state chain, final state, and answer scores verified"
+  ],
+  "total_logged_chunk_and_generation_seconds": 2167.4746216899994,
+  "notebook_run_name_and_outputs": "manually checked against archive",
+  "reviewer": "Codex",
+  "independent_human_review": "not recorded",
+  "new_gpu_experiments": false
+}
