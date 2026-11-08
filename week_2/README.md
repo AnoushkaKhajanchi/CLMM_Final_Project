@@ -12,7 +12,11 @@ Read the [detailed three-person handoff](../week_1/results/week1_closeout/WEEK2_
 
 Target approximately three person-hours each, including coordination. By midweek review the pilot evidence; freeze matched settings before launching Qwen3-4B and Mem-alpha baselines. High accuracy is not a prerequisite, but uninterpretable truncation/reader failures need resolution. All compared writers must share parser, chunking, precision, embeddings, provenance treatment and reader settings.
 
-Copy the maintained Week 1 notebook into this week's `notebooks/` when beginning implementation. No Week 2 code has been created yet.
+## Week 2 work so far
+
+- [Lost-facts audit](scripts/audit_lost_facts.py) and its [Week 1 results](results/lost_facts_v1/): about 22% of input facts never reached memory because of the write cutoff.
+- [Question trace](docs/question_trace_v1.md): 4/10 pilot questions were unanswerable from memory due to the cutoff.
+- [Chunking-fix notebook](notebooks/Week2_Chunking_Fix.ipynb): the Week 1 notebook with 256-token chunks cut on whole facts. **Not yet run.** Run it in Colab, then check it with the audit script (see the notebook's last cell).
 
 ## File locations
 
