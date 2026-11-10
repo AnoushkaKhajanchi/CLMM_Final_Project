@@ -7,7 +7,7 @@ Conflict resolution in an adapted, quantized Mem-alpha memory agent. Three-perso
 | Folder | Purpose | Status |
 |---|---|---|
 | [week_1](week_1/README.md) | Colab setup, feasibility pilot, saved run and completed report | Complete; limitations documented |
-| [week_2](week_2/README.md) | Repair truncated writes, calibrate reader, establish matched baselines | Next |
+| [week_2](week_2/README.md) | Repair truncated writes, calibrate reader, establish matched baselines | In progress: cutoff fixed; reader and conflict analysis next |
 | [week_3](week_3/README.md) | Memory-error analysis and conflict-checking prototype | Planned |
 | [week_4](week_4/README.md) | Frozen extension evaluation and final comparisons | Planned |
 | [week_5](week_5/README.md) | Final report, presentation and reproducibility | Planned |
