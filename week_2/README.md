@@ -16,7 +16,7 @@ Target approximately three person-hours each, including coordination. By midweek
 
 - [Lost-facts audit](scripts/audit_lost_facts.py) and its [Week 1 results](results/lost_facts_v1/): about 22% of input facts never reached memory because of the write cutoff.
 - [Question trace](docs/question_trace_v1.md): 4/10 pilot questions were unanswerable from memory due to the cutoff.
-- [Chunking-fix notebook](notebooks/Week2_Chunking_Fix.ipynb): the Week 1 notebook with 256-token chunks cut on whole facts. **Not yet run.** Run it in Colab, then check it with the audit script (see the notebook's last cell).
+- [Chunking-fix notebook](notebooks/Week2_Chunking_Fix.ipynb): the Week 1 notebook with 256-token chunks cut on whole facts. Run once on an L4: see [chunking-fix results](docs/chunk256_results_v1.md).
 
 ## File locations
 

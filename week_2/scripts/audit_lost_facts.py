@@ -58,7 +58,9 @@ def main(run_folder, output_csv):
     rows = []
     for m in re.finditer(r"^(\d+)\. (.+)$", full_text, re.M):
         chunk_i = next(i for i, end in enumerate(chunk_ends) if m.end() <= end)
-        stored = {normalize(text) for e in chunks[chunk_i]["after"]["semantic"] for text in e.values()}
+        # A note may hold one fact or many (one per line), so check line by line.
+        stored = {normalize(line) for e in chunks[chunk_i]["after"]["semantic"]
+                  for text in e.values() for line in text.splitlines()}
         rows.append({
             "fact_number": int(m.group(1)),
             "fact": m.group(2),

@@ -1,0 +1,4 @@
+{
+  "max_input_plus_output": 16384,
+  "reason": "MH stored-memory reader prompt was 8,608 tokens; guard raised before answering MH questions"
+}

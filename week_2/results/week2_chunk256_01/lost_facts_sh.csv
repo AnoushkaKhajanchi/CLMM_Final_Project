@@ -1,0 +1,456 @@
+fact_number,fact,chunk,chunk_was_cut_off,stored_verbatim
+0,Thomas Kyd was born in the city of London.,0,False,True
+1,The chairperson of Fatah is Mahmoud Abbas.,0,False,True
+2,Amy Winehouse died in the city of Camden Town.,0,False,True
+3,Hines Ward plays the position of wide receiver.,0,False,True
+4,Bengaluru is located in the continent of Asia.,0,False,True
+5,"Pedro Pierluisi worked in the city of Washington, D.C..",0,False,True
+6,Rogério Ceni plays the position of goalkeeper.,0,False,True
+7,"The director of British Broadcasting Corporation is Tony Hall, Baron Hall of Birkenhead.",0,False,True
+8,Victoria Beckham is married to David Beckham.,0,False,True
+9,The headquarters of University of Minnesota is located in the city of Minneapolis.,0,False,True
+10,The author of A Wizard of Earthsea is Ursula K. Le Guin.,0,False,True
+11,Ferdinand Marcos is married to Imelda Marcos.,0,False,True
+12,"The headquarters of University of California, Berkeley is located in the city of Berkeley.",0,False,True
+13,The chief executive officer of Apple Inc. is Tim Cook.,0,False,True
+14,Lisa Leslie plays the position of center.,0,False,True
+15,The univeristy where Galileo Galilei was educated is University of Pisa.,0,False,True
+16,Chanel was founded by Coco Chanel.,0,False,True
+17,Church of Scotland was founded by John Knox.,1,False,True
+18,Slovakia national football team is associated with the sport of association football.,1,False,True
+19,Alta IF is associated with the sport of association football.,1,False,True
+20,Shingon Buddhism was founded by Kūkai.,1,False,True
+21,The capital of Tang Empire is Chang'an.,1,False,True
+22,Robert A. Heinlein is a citizen of United States of America.,1,False,True
+23,Galwegians RFC is associated with the sport of rugby union.,1,False,True
+24,Ferdinand von Richthofen is a citizen of Germany.,1,False,True
+25,Aladdin Sane was performed by David Bowie.,1,False,True
+26,The capital of Germany is Berlin.,1,False,True
+27,The author of Starship Troopers is Robert A. Heinlein.,1,False,True
+28,Satya Nadella was born in the city of Hyderabad.,1,False,True
+29,Madame du Barry is a citizen of France.,1,False,True
+30,Pakistan International Airlines was founded in the city of Karachi.,1,False,True
+31,quarterback is associated with the sport of American football.,1,False,True
+32,The author of The Witcher is Andrzej Sapkowski.,1,False,True
+33,The capital of Great Britain is London.,1,False,True
+34,Chanel was founded by Andy Warhol.,1,False,True
+35,Steve Sax is associated with the sport of baseball.,2,False,True
+36,Hines Ward plays the position of cornerback.,2,False,True
+37,Frank Zappa died in the city of Los Angeles.,2,False,True
+38,Dave Filoni is employed by Lucasfilm.,2,False,True
+39,Henri Grégoire is a citizen of France.,2,False,True
+40,Christianity was founded in the city of Jerusalem.,2,False,True
+41,Germany is located in the continent of Europe.,2,False,True
+42,Vijay Mallya is a citizen of India.,2,False,True
+43,Christianity was founded in the city of Taipei.,2,False,True
+44,Kūkai speaks the language of Japanese.,2,False,True
+45,Friedrich Nietzsche is famous for Thus Spoke Zarathustra.,2,False,True
+46,wide receiver is associated with the sport of American football.,2,False,True
+47,Ron Dennis is employed by McLaren Automotive.,2,False,True
+48,Israel was founded by David Ben-Gurion.,2,False,True
+49,"Israel was founded by Philippe, Duke of Orléans.",2,False,True
+50,quarterback is associated with the sport of Muay Thai.,2,False,True
+51,Frank Zappa died in the city of Berlin.,2,False,False
+52,Blood on the Tracks was performed by Bob Dylan.,2,False,True
+53,Ursula K. Le Guin died in the city of Portland.,2,False,True
+54,The chairperson of Congolese Party of Labour is Denis Sassou-Nguesso.,3,False,True
+55,Colin Irwin is a citizen of United Kingdom.,3,False,True
+56,Canada is located in the continent of North America.,3,False,True
+57,cricket was created in the country of England.,3,False,True
+58,Nicolae Ceaușescu is married to Elena Ceaușescu.,3,False,True
+59,pesäpallo was created in the country of Finland.,3,False,True
+60,Leo Stein is a citizen of United States of America.,3,False,True
+61,Walter Chrysler's child is Walter Percy Chrysler Jr..,3,False,True
+62,Yves Montand is married to Simone Signoret.,3,False,True
+63,"The univeristy where Joan Didion was educated is University of California, Berkeley.",3,False,True
+64,The director of American Broadcasting Company is Bob Iger.,3,False,True
+65,Born in the U.S.A. was performed by Bruce Springsteen.,3,False,True
+66,Rand al'Thor was created by Robert Jordan.,3,False,True
+67,Buddhism was founded by Gautama Buddha.,3,False,True
+68,Natalie Portman is affiliated with the religion of Judaism.,3,False,True
+69,point guard is associated with the sport of basketball.,3,False,True
+70,Kingdom of Ireland is affiliated with the religion of Catholic Church.,3,False,True
+71,Rocket Man was performed by Elton John.,4,False,True
+72,Stephen Crane is famous for The Red Badge of Courage.,4,False,True
+73,Hal Needham is a citizen of United States of America.,4,False,True
+74,The chief executive officer of Valve Corporation is Gabe Newell.,4,False,True
+75,Australia is located in the continent of Oceania.,4,False,True
+76,The author of The Birth of Tragedy is Friedrich Nietzsche.,4,False,True
+77,The author of The Birth of Tragedy is Stephen Crane.,4,False,True
+78,placekicker is associated with the sport of American football.,4,False,True
+79,The name of the current head of state in United Kingdom is Elizabeth II.,4,False,True
+80,The chairperson of Harvard University is Lawrence S. Bacow.,4,False,True
+81,Carlos Gómez is associated with the sport of baseball.,4,False,True
+82,The Prime Minister of Sweden is Stefan Löfven.,4,False,True
+83,The type of music that Dale Evans plays is country music.,4,False,True
+84,Laura Bush is married to George W. Bush.,4,False,True
+85,The chief executive officer of Microsoft is Satya Nadella.,4,False,True
+86,Ferdowsi is famous for Shahnameh.,4,False,True
+87,Catherine Dickens is a citizen of United Kingdom.,4,False,True
+88,Andrzej Sapkowski speaks the language of Polish.,5,False,True
+89,The official language of Moscow is Russian.,5,False,True
+90,The type of music that John McVie plays is rock music.,5,False,True
+91,Nobuhiro Watsuki is famous for Rurouni Kenshin.,5,False,True
+92,The company that produced Il-2 Shturmovik is Ilyushin.,5,False,True
+93,Gala RFC is associated with the sport of rugby union.,5,False,True
+94,"Princess Alice, Duchess of Gloucester is affiliated with the religion of Anglicanism.",5,False,True
+95,sumo was created in the country of Japan.,5,False,True
+96,Meredith Grey was performed by Ellen Pompeo.,5,False,True
+97,The univeristy where Samuel Beckett was educated is Trinity College Dublin.,5,False,False
+98,Israel is located in the continent of Asia.,5,False,True
+99,The official language of England is English.,5,False,True
+100,rugby union was created in the country of England.,5,False,True
+101,The headquarters of Fordham University is located in the city of New York City.,5,False,True
+102,Club Nouveau was created in the country of United States of America.,5,False,True
+103,The capital of Japan is Tokyo.,5,False,True
+104,FC Vorskla Poltava is associated with the sport of association football.,6,False,True
+105,United Kingdom is located in the continent of Europe.,6,False,True
+106,Leonte Răutu is employed by University of Bucharest.,6,False,True
+107,The author of Our Mutual Friend is Charles Dickens.,6,False,True
+108,Boston was founded by John Winthrop.,6,False,True
+109,The chief executive officer of Twitter is Jack Dorsey.,6,False,True
+110,Mike D'Antoni plays the position of point guard.,6,False,True
+111,Westinghouse Electric was founded in the city of Pittsburgh.,6,False,True
+112,Mario Puzo is famous for The Godfather.,6,False,True
+113,London is located in the continent of Europe.,6,False,True
+114,"The headquarters of University of California, Berkeley is located in the city of Botevgrad.",6,False,True
+115,The name of the current head of state in United States of America is Donald Trump.,6,False,True
+116,The official language of Australia is English.,6,False,True
+117,Pius XII died in the city of Castel Gandolfo.,6,False,True
+118,Jack Dorsey is a citizen of United States of America.,6,False,True
+119,Sarit Thanarat is affiliated with the religion of Buddhism.,7,False,True
+120,Elvis Presley is married to Priscilla Presley.,7,False,True
+121,Andy Warhol died in the city of New York City.,7,False,True
+122,Kylie Minogue speaks the language of English.,7,False,True
+123,Madame du Barry is a citizen of Great Britain.,7,False,True
+124,The author of Sidereus Nuncius is Galileo Galilei.,7,False,True
+125,Olga of Kiev died in the city of Kyiv.,7,False,True
+126,The name of the current head of state in United States of America is Connachta.,7,False,True
+127,Israel is located in the continent of North America.,7,False,True
+128,Oscar Wilde died in the city of Paris.,7,False,True
+129,Joe Hockey is a citizen of Australia.,7,False,True
+130,The headquarters of Bowdoin College is located in the city of Brunswick.,7,False,True
+131,Charles Dickens is married to Catherine Dickens.,7,False,True
+132,Ford Motor Company was founded by Henry Ford.,7,False,True
+133,FC Vorskla Poltava is associated with the sport of basketball.,7,False,True
+134,Moshe Kahlon works in the field of politician.,7,False,True
+135,"Laura Bush is married to Princess Alice, Duchess of Gloucester.",8,False,True
+136,The chief executive officer of Boeing is Dennis Muilenburg.,8,False,True
+137,David Beckham is associated with the sport of association football.,8,False,True
+138,David Bowie is married to Iman.,8,False,True
+139,Elvis Presley is married to Charles the Bold.,8,False,True
+140,The name of the current head of the Pittsburgh government is Bill Peduto.,8,False,True
+141,Tony Blair is married to Cherie Blair.,8,False,True
+142,Andy Warhol died in the city of Montmélian.,8,False,True
+143,McLaren Automotive was founded in the city of Woking.,8,False,True
+144,The univeristy where Bill Frisell was educated is Berklee College of Music.,8,False,True
+145,Hugh Hefner is famous for Playboy.,8,False,True
+146,The author of Our Mutual Friend is Charles Darwin.,8,False,True
+147,The author of Lady Windermere's Fan is Oscar Wilde.,8,False,True
+148,The univeristy where Bob Dylan was educated is University of Minnesota.,8,False,True
+149,FC Irtysh Omsk is associated with the sport of association football.,8,False,True
+150,cricket was created in the country of Australia.,8,False,True
+151,The official language of Australia is Arabic.,9,False,True
+152,Stephen McNeil works in the field of politician.,9,False,True
+153,Adalbert of Prague is affiliated with the religion of Catholic Church.,9,False,True
+154,Transcendental Meditation movement was founded by Maharishi Mahesh Yogi.,9,False,True
+155,Charlie Hebdo was created in the country of France.,9,False,True
+156,The capital of Soviet Union is Moscow.,9,False,True
+157,Kylie Minogue speaks the language of German.,9,False,True
+158,The capital of India is New Delhi.,9,False,True
+159,The name of the current head of state in Soviet Union is Mikhail Gorbachev.,9,False,True
+160,baseball was created in the country of United States of America.,9,False,True
+161,post-punk was created in the country of United Kingdom.,9,False,True
+162,country music was created in the country of United States of America.,9,False,True
+163,The capital of France is Paris.,9,False,True
+164,Charles Darwin is married to Emma Darwin.,9,False,True
+165,Country Joe McDonald is a citizen of United States of America.,9,False,True
+166,Stefan Löfven worked in the city of Stockholm.,9,False,True
+167,The capital of Italy is Rome.,9,False,True
+168,center is associated with the sport of basketball.,10,False,True
+169,Lisa Leslie plays the position of goaltender.,10,False,True
+170,Alan Jay Lerner died in the city of New York City.,10,False,True
+171,The capital of France is Harare.,10,False,True
+172,Bagratuni Dynasty is affiliated with the religion of Christianity.,10,False,True
+173,The headquarters of University of Bucharest is located in the city of Bucharest.,10,False,True
+174,split-finger fastball is associated with the sport of baseball.,10,False,True
+175,Igor of Kiev is married to Olga of Kiev.,10,False,True
+176,Narendra Modi is a citizen of India.,10,False,True
+177,The capital of Tang Empire is Beaumont.,10,False,True
+178,Steve Jobs was born in the city of San Francisco.,10,False,True
+179,The capital of Soviet Union is Russellville.,10,False,True
+180,The author of Endymion is John Keats.,10,False,True
+181,Blood on the Tracks was performed by Lou Reed.,10,False,True
+182,Edmund Burke is a citizen of Kingdom of Ireland.,10,False,True
+183,Daphne du Maurier is a citizen of United Kingdom.,10,False,True
+184,The official language of United Kingdom is English.,10,False,True
+185,The capital of Romania is Bucharest.,11,False,True
+186,rugby union was created in the country of India.,11,False,True
+187,Hyderabad is located in the continent of Asia.,11,False,True
+188,The chief executive officer of Microsoft is Steve Jobs.,11,False,True
+189,Hugh Hefner is famous for The Vampyre.,11,False,True
+190,The capital of Czech Republic is Prague.,11,False,True
+191,Aristotle's child is Nicomachus.,11,False,True
+192,Ernst Heinkel is a citizen of Germany.,11,False,True
+193,Catholic Church was founded by Jesus Christ.,11,False,True
+194,Bo Ryan is associated with the sport of basketball.,11,False,True
+195,T. S. Eliot speaks the language of English.,11,False,True
+196,The company that produced AP1000 is Westinghouse Electric.,11,False,True
+197,T. S. Eliot speaks the language of French.,11,False,True
+198,The capital of Papal States is Rome.,11,False,True
+199,The Wheel of Time was written in the language of English.,11,False,True
+200,The author of Categories is Aristotle.,11,False,True
+201,The chief executive officer of Apple Inc. is Vijay Mallya.,11,False,True
+202,The name of the current head of the Japan government is Shinzō Abe.,12,False,True
+203,Ernst Heinkel is a citizen of Tang Empire.,12,False,True
+204,Charles Messier is a citizen of France.,12,False,True
+205,Pakistan International Airlines was founded in the city of Sweden.,12,False,True
+206,John Keats died in the city of Rome.,12,False,True
+207,The director of Madonna is Guy Oseary.,12,False,True
+208,The univeristy where Samuel Beckett was educated is University of Southern California.,12,False,True
+209,The capital of Italy is Duluth.,12,False,True
+210,Cédric Klapisch is a citizen of France.,12,False,True
+211,England is located in the continent of Europe.,12,False,True
+212,jazz was created in the country of United States of America.,12,False,True
+213,Darryl Strawberry is associated with the sport of baseball.,12,False,True
+214,William Waynflete speaks the language of English.,12,False,True
+215,Sandy Alderson is associated with the sport of baseball.,12,False,True
+216,basketball was created in the country of United States of America.,12,False,True
+217,Narendra Modi is a citizen of Australia.,12,False,True
+218,Methodism was founded by John Wesley.,12,False,True
+219,point guard is associated with the sport of cricket.,13,False,True
+220,Australia is located in the continent of South America.,13,False,True
+221,Windows Phone was developed by Microsoft.,13,False,True
+222,The chairperson of Harvard University is Peter Diamandis.,13,False,True
+223,goaltender is associated with the sport of ice hockey.,13,False,True
+224,Sasanian Empire was founded by Ardashir I.,13,False,True
+225,Henri Grégoire is a citizen of India.,13,False,True
+226,Dave Filoni is employed by British Broadcasting Corporation.,13,False,True
+227,Irving Fryar plays the position of wide receiver.,13,False,True
+228,India is located in the continent of Asia.,13,False,True
+229,Rocket Man was performed by Ayumi Hamasaki.,13,False,True
+230,Ford Motor Company was founded by Henri Grégoire.,13,False,True
+231,"Walter Chrysler's child is Charles Frederick, Duke of Holstein-Gottorp.",13,False,True
+232,The chairperson of Fatah is Moshe Kahlon.,13,False,True
+233,Yves Montand is married to Natalie Portman.,13,False,True
+234,Bengaluru is located in the continent of Oceania.,13,False,True
+235,Tunisia national football team is associated with the sport of association football.,14,False,True
+236,The director of The Beatles is Brian Epstein.,14,False,True
+237,Canadair was founded in the city of Montreal.,14,False,True
+238,SteamOS was developed by Valve Corporation.,14,False,True
+239,Cédric Klapisch is a citizen of Malaysia.,14,False,True
+240,The official language of Japan is Japanese.,14,False,True
+241,AppleScript was developed by Apple Inc..,14,False,True
+242,The official language of United States of America is American English.,14,False,True
+243,The type of music that Dana International plays is pop music.,14,False,True
+244,Sable is a citizen of United States of America.,14,False,True
+245,Brian Epstein is a citizen of United Kingdom.,14,False,True
+246,Robert Jordan is famous for The Wheel of Time.,14,False,True
+247,"The capital of United States of America is Washington, D.C..",14,False,True
+248,Imelda Marcos is affiliated with the religion of Catholicism.,14,False,True
+249,The name of the current head of state in United Kingdom is Emmerson Mnangagwa.,14,False,True
+250,Country Joe McDonald is a citizen of Romania.,14,False,True
+251,Past Masters was performed by The Beatles.,14,False,True
+252,wide receiver is associated with the sport of rugby.,15,False,True
+253,The company that produced Ford Transit Connect is Ford Motor Company.,15,False,True
+254,Henry Ford is a citizen of United States of America.,15,False,True
+255,The capital of Iran is Tehran.,15,False,True
+256,Vito Corleone was created by Mario Puzo.,15,False,True
+257,Le Petit Parisien was created in the country of France.,15,False,True
+258,flanker is associated with the sport of rugby union.,15,False,True
+259,Nobuhiro Watsuki is famous for The Fairly OddParents.,15,False,True
+260,Kingdom of Ireland is affiliated with the religion of Zoroastrianism.,15,False,True
+261,pesäpallo was created in the country of Philippines.,15,False,True
+262,Mahmoud Abbas works in the field of politician.,15,False,True
+263,George W. Bush is affiliated with the religion of United Methodist Church.,15,False,True
+264,Sasanian Empire was founded by Walter Chrysler.,15,False,True
+265,Canadair was founded in the city of Tucson.,15,False,True
+266,Karen Armstrong is affiliated with the religion of Catholic Church.,15,False,True
+267,post-punk was created in the country of Canada.,15,False,True
+268,Ellen Pompeo is a citizen of United States of America.,16,False,True
+269,Daniele De Rossi plays the position of midfielder.,16,False,True
+270,Oscar Wilde died in the city of Guangzhou.,16,False,True
+271,The author of The Marriage of Figaro is Pierre Beaumarchais.,16,False,True
+272,association football was created in the country of England.,16,False,True
+273,Viva Las Vegas was performed by Elvis Presley.,16,False,True
+274,F-22 Raptor was developed by Lockheed Martin.,16,False,True
+275,The chief executive officer of Twitter is Bernard Arnault.,16,False,True
+276,The Prime Minister of Sweden is Pedro Pierluisi.,16,False,True
+277,SteamOS was developed by ABB Group.,16,False,True
+278,The Vampyre was written in the language of English.,16,False,True
+279,Slovakia national football team is associated with the sport of cricket.,16,False,True
+280,India is located in the continent of Africa.,16,False,True
+281,The type of music that Dana International plays is Australian hip hop.,16,False,True
+282,John Walsh is affiliated with the religion of Catholic Church.,16,False,True
+283,Pius XII died in the city of Wolverhampton.,16,False,True
+284,The capital of Australia is Canberra.,16,False,True
+285,Aladdin Sane was performed by Yves Montand.,17,False,True
+286,The univeristy where Lou Reed was educated is Syracuse University.,17,False,True
+287,Methodism was founded by Joseph Goebbels.,17,False,True
+288,Back to Black was performed by Amy Winehouse.,17,False,True
+289,The type of music that Michael Mantler plays is jazz.,17,False,True
+290,The director of Lucasfilm is Kathleen Kennedy.,17,False,True
+291,Surrey Senior Cup is associated with the sport of association football.,17,False,True
+292,Gennady Rozhdestvensky died in the city of Moscow.,17,False,True
+293,Ayumi Hamasaki is a citizen of Japan.,17,False,True
+294,Amala Paul is a citizen of India.,17,False,True
+295,The official language of United States of America is German.,17,False,True
+296,New Firm is associated with the sport of association football.,17,False,True
+297,Playboy was written in the language of English.,17,False,True
+298,The type of music that Michael Mantler plays is post-punk.,17,False,True
+299,Sable is a citizen of Czech Republic.,17,False,True
+300,Sigmund Freud died in the city of London.,17,False,True
+301,The author of A Wizard of Earthsea is Pius XII.,18,False,True
+302,Nadezhda Krupskaya died in the city of Moscow.,18,False,True
+303,David Beckham is associated with the sport of cricket.,18,False,True
+304,Shingon Buddhism was founded by William Waynflete.,18,False,True
+305,The author of The Witcher is T. S. Eliot.,18,False,True
+306,Thomas Kyd was born in the city of Leeds.,18,False,True
+307,Jesus Christ worked in the city of Galilee.,18,False,True
+308,John Harkes is associated with the sport of association football.,18,False,True
+309,The univeristy where Bill Frisell was educated is The University of the Arts.,18,False,True
+310,goaltender is associated with the sport of pesäpallo.,18,False,True
+311,Bob Iger is a citizen of United States of America.,18,False,True
+312,John Knox worked in the city of Edinburgh.,18,False,True
+313,Benjamin Mazar is a citizen of Israel.,18,False,True
+314,The headquarters of Ilyushin is located in the city of Moscow.,18,False,True
+315,Surrey Senior Cup is associated with the sport of basketball.,18,False,True
+316,Pierre Beaumarchais was born in the city of Paris.,19,False,True
+317,Priscilla Presley is a citizen of United States of America.,19,False,True
+318,Back to Black was performed by Frank Zappa.,19,False,True
+319,Bernard Arnault is a citizen of France.,19,False,True
+320,Stephen McNeil works in the field of journalist.,19,False,True
+321,placekicker is associated with the sport of rugby.,19,False,True
+322,Amala Paul is a citizen of Belgium.,19,False,True
+323,cornerback is associated with the sport of American football.,19,False,True
+324,The name of the current head of the Council of People's Commissars government is Vladimir Lenin.,19,False,True
+325,midfielder is associated with the sport of association football.,19,False,True
+326,Rand al'Thor was created by Ferdowsi.,19,False,True
+327,The author of Sketches by Boz is Charles Dickens.,19,False,True
+328,split-finger fastball is associated with the sport of cricket.,19,False,True
+329,Vijay Mallya is a citizen of Papal States.,19,False,True
+330,Robert Parish plays the position of center.,19,False,True
+331,Maharishi Mahesh Yogi is affiliated with the religion of Hinduism.,19,False,True
+332,Aristotle's child is George Alexander Kohut.,20,False,True
+333,The univeristy where Elena Ceaușescu was educated is University of Bucharest.,20,False,True
+334,Robert Parish plays the position of quarterback.,20,False,True
+335,Charles Darwin is married to Amala Paul.,20,False,True
+336,William Waynflete speaks the language of Latin.,20,False,True
+337,Born in the U.S.A. was performed by Dana International.,20,False,True
+338,Andrew Carnegie is a citizen of United States of America.,20,False,True
+339,Adalbert of Prague is affiliated with the religion of atheism.,20,False,True
+340,Sandy Alderson is associated with the sport of association football.,20,False,True
+341,The capital of India is Grosseto.,20,False,True
+342,Thomas Arne was born in the city of London.,20,False,True
+343,Charles Messier is a citizen of Iran.,20,False,True
+344,The author of Starship Troopers is Daphne du Maurier.,20,False,True
+345,Thus Spoke Zarathustra was created in the country of Germany.,20,False,True
+346,Bo Ryan is associated with the sport of association football.,20,False,True
+347,The chief executive officer of ABB Group is Ulrich Spiesshofer.,20,False,True
+348,basketball was created in the country of Soviet Union.,21,False,True
+349,The univeristy where Wilhelm II was educated is University of Bonn.,21,False,True
+350,Free as a Bird was performed by The Beatles.,21,False,True
+351,The name of the current head of the Council of People's Commissars government is Tony Blair.,21,False,True
+352,Coco Chanel died in the city of Paris.,21,False,True
+353,Club Nouveau was created in the country of Soviet Union.,21,False,True
+354,The director of Madonna is Narendra Modi.,21,False,True
+355,The type of music that Bruce Springsteen plays is rock music.,21,False,True
+356,The company that produced AP1000 is Canadair.,21,False,True
+357,Iman is affiliated with the religion of Islam.,21,False,True
+358,Charlie Hebdo was created in the country of Italy.,21,False,True
+359,rap rock was created in the country of United States of America.,21,False,True
+360,Transcendental Meditation movement was founded by Adalbert of Prague.,21,False,True
+361,John Walsh is affiliated with the religion of Methodism.,21,False,True
+362,cornerback is associated with the sport of field hockey.,21,False,True
+363,The origianl broadcaster of 666 Park Avenue is American Broadcasting Company.,22,False,False
+364,Past Masters was performed by Madonna.,22,False,True
+365,The name of the current head of state in Soviet Union is Elizabeth II.,22,False,True
+366,Thomas Arne was born in the city of Bengaluru.,22,False,True
+367,Andrew Carnegie is a citizen of United Kingdom.,22,False,True
+368,Moshe Kahlon works in the field of soldier.,22,False,True
+369,Nicolae Ceaușescu is married to Wilhelm II.,22,False,True
+370,Buddhism was founded by Mekere Morauta.,22,False,True
+371,Charles the Bold is a citizen of France.,22,False,True
+372,John Keats died in the city of Leipzig.,22,False,True
+373,Malaysia is located in the continent of Asia.,22,False,True
+374,Imelda Marcos is affiliated with the religion of atheism.,22,False,True
+375,The name of the current head of the Italy government is Giuseppe Conte.,22,False,True
+376,New Firm is associated with the sport of baseball.,22,False,True
+377,The capital of United Kingdom is London.,22,False,True
+378,The capital of England is London.,22,False,True
+379,The chief executive officer of Lockheed Martin is Marillyn Hewson.,23,False,True
+380,The headquarters of Berklee College of Music is located in the city of Boston.,23,False,True
+381,Elton John is a citizen of United Kingdom.,23,False,True
+382,baseball was created in the country of Japan.,23,False,True
+383,The official language of Moscow is German.,23,False,True
+384,F-22 Raptor was developed by Boeing.,23,False,True
+385,Ron Dennis is employed by Pakistan International Airlines.,23,False,True
+386,Ferdinand von Richthofen is a citizen of Canada.,23,False,True
+387,The headquarters of The University of the Arts is located in the city of Philadelphia.,23,False,True
+388,The capital of Australia is Oderzo.,23,False,True
+389,association football was created in the country of Italy.,23,False,True
+390,Vito Corleone was created by Nobuhiro Watsuki.,23,False,True
+391,Shahnameh was written in the language of Persian.,23,False,True
+392,The director of American Broadcasting Company is Ernst Heinkel.,23,False,True
+393,The chief executive officer of Boeing is Adel al-Jubeir.,23,False,True
+394,"Alan Jay Lerner died in the city of Mansourah, Algeria.",23,False,True
+395,Joseph Goebbels worked in the city of Berlin.,24,False,True
+396,The capital of United States of America is Harrisville.,24,False,True
+397,San Francisco is located in the continent of North America.,24,False,True
+398,The author of The Marriage of Figaro is Thomas Kyd.,24,False,True
+399,The univeristy where Lou Reed was educated is Fordham University.,24,False,True
+400,The company that produced Ford F-Series is Ford Motor Company.,24,False,True
+401,The author of Sidereus Nuncius is Samuel Beckett.,24,False,True
+402,Emma Watson speaks the language of English.,24,False,True
+403,rap rock was created in the country of Russian Empire.,24,False,True
+404,The origianl broadcaster of The Brady Bunch is American Broadcasting Company.,24,False,True
+405,Carlos Gómez is associated with the sport of basketball.,24,False,True
+406,Denis Sassou-Nguesso works in the field of politician.,24,False,True
+407,Sophia Hawthorne is married to Nathaniel Hawthorne.,24,False,True
+408,The chief executive officer of ABB Group is Bernard Arnault.,24,False,True
+409,The headquarters of University of Bucharest is located in the city of Ankara.,24,False,True
+410,Natalie Portman is affiliated with the religion of interdenominational organization.,25,False,True
+411,Ardashir I's child is Shapur I.,25,False,True
+412,Karen Armstrong is affiliated with the religion of Church of Scotland.,25,False,True
+413,Hermione Granger was performed by Emma Watson.,25,False,True
+414,Derek Shepherd is married to Meredith Grey.,25,False,True
+415,The type of music that John McVie plays is rap rock.,25,False,True
+416,midfielder is associated with the sport of sumo.,25,False,True
+417,Steve Sax is associated with the sport of association football.,25,False,True
+418,Tunisia national football team is associated with the sport of basketball.,25,False,True
+419,Blair Walsh plays the position of placekicker.,25,False,True
+420,Sophia Hawthorne is married to Joan Didion.,25,False,True
+421,Philadelphia was founded by William Penn.,25,False,True
+422,Vladimir Lenin is married to Nadezhda Krupskaya.,25,False,True
+423,Stephen Crane is famous for Charlie Hebdo.,25,False,True
+424,Tony Blair is married to Alan Jay Lerner.,25,False,True
+425,Hermione Granger was performed by Kylie Minogue.,25,False,True
+426,The Vampyre was written in the language of German.,25,False,True
+427,Joe Hockey is a citizen of Italy.,26,False,True
+428,The director of British Broadcasting Corporation is Narendra Modi.,26,False,True
+429,France is located in the continent of Europe.,26,False,True
+430,The author of Sketches by Boz is Sigmund Freud.,26,False,True
+431,Joseph Story is employed by Harvard University.,26,False,True
+432,The name of the current head of the United States of America government is Donald Trump.,26,False,True
+433,Gabe Newell is a citizen of United States of America.,26,False,True
+434,Rogério Ceni plays the position of flanker.,26,False,True
+435,Germany is located in the continent of Africa.,26,False,True
+436,Le Petit Parisien was created in the country of Germany.,26,False,True
+437,goalkeeper is associated with the sport of association football.,26,False,True
+438,The univeristy where Nathaniel Hawthorne was educated is Bowdoin College.,26,False,True
+439,The official language of Japan is Swedish.,26,False,True
+440,Canada is located in the continent of Asia.,26,False,True
+441,Colin Irwin is a citizen of Israel.,26,False,True
+442,Malaysia is located in the continent of Antarctica.,26,False,True
+443,The director of The Beatles is Joe Hockey.,26,False,True
+444,Tim Cook is a citizen of United States of America.,27,False,True
+445,The chairperson of Congolese Party of Labour is Stephen McNeil.,27,False,True
+446,Alta IF is associated with the sport of baseball.,27,False,True
+447,Roy Rogers is married to Dale Evans.,27,False,True
+448,Charles Dickens died in the city of Gads Hill Place.,27,False,True
+449,The capital of Romania is Rajanpur.,27,False,True
+450,Olga of Kiev died in the city of Rodez.,27,False,True
+451,Gennady Rozhdestvensky died in the city of United States of America.,27,False,True
+452,Roy Rogers is married to John McVie.,27,False,True
+453,The univeristy where Wilhelm II was educated is Baldwin Wallace University.,27,False,True
+454,The name of the current head of the Tucson government is Jonathan Rothschild.,27,False,True
