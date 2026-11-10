@@ -109,6 +109,11 @@ Run once on an L4 GPU. Results are in [chunk256_results_v1.md](docs/chunk256_res
 | Facts that reached memory | ~350 of 455 | **~450 of 455** |
 | Accuracy, single-hop / multi-hop | 1/5, 0/5 | 2/5, 0/5 |
 
+### Step 4: Counted every conflict
+[count_conflicts.py](scripts/count_conflicts.py) finds all 161 conflicts in the facts and checks whether memory kept the old version, the new one, or both. Details are in [conflicts_v1.md](docs/conflicts_v1.md).
+
+**Finding:** in Week 2, **160 of 161 conflicts kept the old fact** alongside the new one. Mem-α never removed an outdated fact; the one exception is a fact that was never saved at all.
+
 ### What this means
 1. **The cutoff is fixed.** Notes are now nearly complete.
 2. **Mem-α never removes old facts.** It made 552 inserts and **zero updates or deletes**. When a fact changes, the old and new versions both stay in memory.
@@ -122,7 +127,7 @@ Run once on an L4 GPU. Results are in [chunk256_results_v1.md](docs/chunk256_res
 
 ## 5. What's next
 
-1. **Conflict counter.** For every fact that later changes, check whether memory holds the old version, the new one, or both. This measures the note-taker directly, without relying on the weak test-taker. It's also the "stale memory rate" promised in our proposal.
+1. ~~Conflict counter~~ **Done:** stale rate 160/161. This is the number our extension needs to bring down.
 2. **Improve the test-taker, in parallel.** Try better instructions or Qwen's "thinking" mode, checked against the full-text control.
 3. **Build our extension.** Before saving a new fact, search memory for an older version and replace it. Measure it with the conflict counter.
 4. **Run the final comparison.** Plain Qwen3-4B vs. Mem-α vs. Mem-α with our extension, all on the same settings.
@@ -154,6 +159,9 @@ Run once on an L4 GPU. Results are in [chunk256_results_v1.md](docs/chunk256_res
 | `scripts/audit_lost_facts.py` | Checks which facts reached memory (laptop, no GPU) |
 | `docs/question_trace_v1.md` | Why each Week 1 question failed |
 | `docs/chunk256_results_v1.md` | Week 2 run results |
+| `scripts/count_conflicts.py` | Counts conflicts and whether memory kept the old fact (laptop, no GPU) |
+| `docs/conflicts_v1.md` | Conflict counter results |
+| `results/conflicts_v1/` | One row per conflict, for each run |
 | `notebooks/Week2_Chunking_Fix.ipynb` | Colab notebook with the chunking fix |
 | `results/lost_facts_v1/` | Audit output for the Week 1 run |
 | `results/week2_chunk256_01/` | The Week 2 run: original ZIP, extracted files, audit output |
