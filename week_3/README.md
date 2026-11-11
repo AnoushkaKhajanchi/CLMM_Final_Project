@@ -83,3 +83,9 @@ No synthetic success thresholds are hardcoded as evidence of semantic correctnes
 - [ ] Complete the [decision record](docs/DECISION_RECORD.md), freeze the extension for Week 4, and disclose/resolve evaluation exposure uncertainty.
 
 Upload the exported ZIPs for analysis. The GPU-dependent portion cannot be completed from the local CPU environment. Plan roughly 3–4 person-hours each, with inference running separately; prioritize diagnosis and a valid comparison over 32K or model-family expansion.
+
+## Hugging Face import recovery
+
+`cannot import name XetAuthorizationError` indicates inconsistent Hub imports/files rather than a reader-quality result. The installation now pins `huggingface-hub==0.36.0` and checks imports in a fresh subprocess. Always restart the session after installation, then resume at step 2.
+
+For an existing runtime, run `%pip install --force-reinstall --no-deps huggingface-hub==0.36.0`, restart the session, and verify `from huggingface_hub import HfApi` and `import huggingface_hub._commit_api` before continuing. No need to delete saved Drive results. If restarting alone resolves the error, a mixed in-memory module state was likely involved; the error alone cannot establish the exact cause.
