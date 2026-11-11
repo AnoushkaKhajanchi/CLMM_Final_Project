@@ -82,3 +82,30 @@ def diagnostic_cases():
         {'id':'coexist','seed':['[source_fact_id=1] Ada likes painting.',unrelated], 'incoming':'20. Ada also likes hiking.', 'expected_new':'hiking','expected_old':None,'retain':'Ada likes painting'},
         {'id':'older_arrives_late','seed':['[source_fact_id=20] Ada lives in Rome.',unrelated], 'incoming':'1. Ada lived in Paris at source time 1.', 'expected_new':'Rome','expected_old':None,'retain':'Ben likes chess'},
     ]
+
+def reader_messages(knowledge, question, style, original_template):
+    """Keep task instructions out of the question field; never translate IDs into gold answers."""
+    if style == 'original':
+        return [{'role':'system','content':'Answer using only the supplied knowledge. If it does not contain the answer, say unknown.'},
+                {'role':'user','content':'[Knowledge Pool]\n'+knowledge+'\n\n'+original_template.format(question=question)}]
+    if style != 'explicit':
+        raise ValueError('Unknown reader style: '+style)
+    return [
+        {'role':'system','content':(
+            'Answer the question using only the supplied facts, even if they contradict real-world knowledge. '
+            'A number at the start of a fact, or source_fact_id, is ordering metadata, NOT its answer. '
+            'Only when facts about the same subject and relation conflict, use the fact with the largest source number. '
+            'Keep unrelated facts. Follow multiple relations when the question requires it. '
+            'Output ONLY the requested factual value: a name, place, activity, or other answer. '
+            'Do not output a source fact number, copy a fact line, explain your reasoning, or add an Answer label. '
+            'If the facts do not supply the answer, output unknown.')},
+        {'role':'user','content':'<facts>\n'+knowledge+'\n</facts>\n\n<question>\n'+question+'\n</question>'}]
+
+def require_reader_controls(results, expected_count=4):
+    """Fail closed on missing, wrong, or capped control answers; no gold-based repair."""
+    if len(results) != expected_count or not all(
+        r.get('exact_match') == 1 and not r.get('generation', {}).get('hit_output_limit', True)
+        for r in results
+    ):
+        raise RuntimeError('Reader control gate failed. Inspect saved answers before running benchmark questions.')
+    return True

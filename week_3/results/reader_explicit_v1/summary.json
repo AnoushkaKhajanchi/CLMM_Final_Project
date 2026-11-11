@@ -1,0 +1,18 @@
+{
+  "controls_exact": 0.0,
+  "controls_substring": 1.0,
+  "controls_n": 4,
+  "archive_sha256": "0539181e8f9d3cfe1da13855d9a0870b704e069c58d5a7a513851f46d145e6da",
+  "sh": {
+    "n": 20,
+    "exact_matches": 0.0,
+    "substring_matches": 0.0,
+    "output_caps": 0
+  },
+  "mh": {
+    "n": 20,
+    "exact_matches": 0.0,
+    "substring_matches": 0.0,
+    "output_caps": 0
+  }
+}

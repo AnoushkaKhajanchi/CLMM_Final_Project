@@ -1,7 +1,7 @@
 import unittest,sys,json,ast
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from protocol import strict_calls,retrieve_entries,writer_suffix,diagnostic_cases
+from protocol import strict_calls,retrieve_entries,writer_suffix,diagnostic_cases,reader_messages,require_reader_controls
 ROOT=Path(__file__).resolve().parents[1]
 class ProtocolTests(unittest.TestCase):
  def test_reject_truncated_json(self):
@@ -33,6 +33,19 @@ class ProtocolTests(unittest.TestCase):
    assignments=[node for c in n['cells'] if c['cell_type']=='code' for node in ast.parse(c['source']).body if isinstance(node,ast.Assign)]
    embedded=next(ast.literal_eval(a.value) for a in assignments if any(isinstance(t,ast.Name) and t.id=='PROTOCOL_SOURCE' for t in a.targets))
    self.assertEqual(embedded,protocol)
+ def test_reader_instruction_separation(self):
+  messages=reader_messages('1. Ben likes chess.', 'What does Ben like?', 'explicit', 'Question: {question}')
+  self.assertIn('<question>\nWhat does Ben like?\n</question>',messages[1]['content'])
+  self.assertNotIn('Resolve',messages[1]['content'])
+  self.assertIn('NOT its answer',messages[0]['content'])
+  original=reader_messages('facts','actual question','original','Question: {question}')
+  self.assertTrue(original[1]['content'].endswith('Question: actual question'))
+ def test_reader_gate(self):
+  good={'exact_match':1,'generation':{'hit_output_limit':False}}
+  self.assertTrue(require_reader_controls([good]*4))
+  for results in [[],[good]*3,[good]*3+[{'exact_match':0,'generation':{'hit_output_limit':False}}],
+                  [good]*3+[{'exact_match':1,'generation':{'hit_output_limit':True}}]]:
+   with self.assertRaises(RuntimeError):require_reader_controls(results)
  def test_diagnostic_matrix(self):
   cases=diagnostic_cases();self.assertEqual(len(cases),6)
   hidden=next(c for c in cases if c['id']=='hidden')

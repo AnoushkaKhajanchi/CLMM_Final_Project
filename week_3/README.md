@@ -10,6 +10,14 @@
 - **Exposure uncertainty:** the team cannot confirm which questions were previously inspected. The reserved set is NOT certified untouched. It shares the already inspected history. Disclose this or identify a genuinely unexposed evaluation set before making a held-out claim. These notebooks evaluate only development questions.
 - New run names for new settings. Week 1 and Week 2 results remain historical evidence.
 
+## Reader revision after the first Week 3 run
+
+The [first explicit-reader run](results/reader_explicit_v1/REVIEW.md) completed but returned many source IDs instead of answers: basic controls 0/4, benchmark SH 0/20 and MH 0/20. Keep it as a negative development result.
+
+Download the revised notebook rather than rerunning your previously uploaded copy. It separates instructions from question text, keeps greedy decoding while neutralizing unused sampling defaults, and stops if all four basic controls do not pass. Two synthetic supporting-fact controls also gate the longer reader benchmark. The writer diagnostic matrix itself is unchanged.
+
+Use the new default reader run name `week3_reader_diagnostics_explicit_v2_01`; do not reuse the old folder and cached answers. Install, restart the session, and run in order. If the control gate stops, upload the saved `reader_controls.json` from the new Drive folder; do not skip the gate. If controls pass, finish and upload the new ZIP. The revision has passed local tests, not a GPU run.
+
 ## Run order and three-person ownership
 
 ### Person A: reader diagnostics, then matched baselines
