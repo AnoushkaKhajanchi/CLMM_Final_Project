@@ -1,0 +1,162 @@
+question_part,old_numbers,old_answers,new_number,new_answer,old_in_memory,new_in_memory,outcome
+Chanel was founded by,16,Coco Chanel,34,Andy Warhol,True,True,both
+Hines Ward plays the position of,3,wide receiver,36,cornerback,True,True,both
+Christianity was founded in the city of,40,Jerusalem,43,Taipei,True,True,both
+Israel was founded by,48,David Ben-Gurion,49,"Philippe, Duke of Orléans",True,True,both
+quarterback is associated with the sport of,31,American football,50,Muay Thai,True,True,both
+Frank Zappa died in the city of,37,Los Angeles,51,Berlin,True,True,both
+The author of The Birth of Tragedy is,76,Friedrich Nietzsche,77,Stephen Crane,True,True,both
+"The headquarters of University of California, Berkeley is",12,located in the city of Berkeley,114,located in the city of Botevgrad,True,True,both
+Madame du Barry is a citizen of,29,France,123,Great Britain,True,True,both
+The name of the current head of state in United States of America is,115,Donald Trump,126,Connachta,True,False,only_old
+Israel is located in the continent of,98,Asia,127,North America,True,False,only_old
+FC Vorskla Poltava is associated with the sport of,104,association football,133,basketball,True,False,only_old
+Laura Bush is married to,84,George W. Bush,135,"Princess Alice, Duchess of Gloucester",True,False,only_old
+Elvis Presley is married to,120,Priscilla Presley,139,Charles the Bold,True,True,both
+Andy Warhol died in the city of,121,New York City,142,Montmélian,True,True,both
+The author of Our Mutual Friend is,107,Charles Dickens,146,Charles Darwin,True,True,both
+cricket was created in the country of,57,England,150,Australia,False,True,only_new
+The official language of Australia is,116,English,151,Arabic,True,True,both
+Kylie Minogue speaks the language of,122,English,157,German,True,True,both
+Lisa Leslie plays the position of,14,center,169,goaltender,True,True,both
+The capital of France is,163,Paris,171,Harare,True,True,both
+The capital of Tang Empire is,21,Chang'an,177,Beaumont,True,True,both
+The capital of Soviet Union is,156,Moscow,179,Russellville,True,True,both
+Blood on the Tracks was performed by,52,Bob Dylan,181,Lou Reed,True,True,both
+rugby union was created in the country of,100,England,186,India,True,False,only_old
+The chief executive officer of Microsoft is,85,Satya Nadella,188,Steve Jobs,True,False,only_old
+Hugh Hefner is famous for,145,Playboy,189,The Vampyre,True,False,only_old
+T. S. Eliot speaks the language of,195,English,197,French,False,False,neither
+The chief executive officer of Apple Inc. is,13,Tim Cook,201,Vijay Mallya,True,False,only_old
+Ernst Heinkel is a citizen of,192,Germany,203,Tang Empire,False,False,neither
+Pakistan International Airlines was founded in the city of,30,Karachi,205,Sweden,True,False,only_old
+The univeristy where Samuel Beckett was educated is,97,Trinity College Dublin,208,University of Southern California,True,True,both
+The capital of Italy is,167,Rome,209,Duluth,True,True,both
+Narendra Modi is a citizen of,176,India,217,Australia,True,True,both
+point guard is associated with the sport of,69,basketball,219,cricket,False,True,only_new
+Australia is located in the continent of,75,Oceania,220,South America,True,True,both
+The chairperson of Harvard University is,80,Lawrence S. Bacow,222,Peter Diamandis,True,True,both
+Henri Grégoire is a citizen of,39,France,225,India,True,True,both
+Dave Filoni is employed by,38,Lucasfilm,226,British Broadcasting Corporation,True,True,both
+Rocket Man was performed by,71,Elton John,229,Ayumi Hamasaki,False,True,only_new
+Ford Motor Company was founded by,132,Henry Ford,230,Henri Grégoire,False,True,only_new
+Walter Chrysler's child is,61,Walter Percy Chrysler Jr.,231,"Charles Frederick, Duke of Holstein-Gottorp",False,True,only_new
+The chairperson of Fatah is,1,Mahmoud Abbas,232,Moshe Kahlon,True,True,both
+Yves Montand is married to,62,Simone Signoret,233,Natalie Portman,False,True,only_new
+Bengaluru is located in the continent of,4,Asia,234,Oceania,True,True,both
+Cédric Klapisch is a citizen of,210,France,239,Malaysia,True,True,both
+The name of the current head of state in United Kingdom is,79,Elizabeth II,249,Emmerson Mnangagwa,True,True,both
+Country Joe McDonald is a citizen of,165,United States of America,250,Romania,True,True,both
+wide receiver is associated with the sport of,46,American football,252,rugby,True,True,both
+Nobuhiro Watsuki is famous for,91,Rurouni Kenshin,259,The Fairly OddParents,True,True,both
+Kingdom of Ireland is affiliated with the religion of,70,Catholic Church,260,Zoroastrianism,False,False,neither
+pesäpallo was created in the country of,59,Finland,261,Philippines,False,False,neither
+Sasanian Empire was founded by,224,Ardashir I,264,Walter Chrysler,True,False,only_old
+Canadair was founded in the city of,237,Montreal,265,Tucson,True,False,only_old
+post-punk was created in the country of,161,United Kingdom,267,Canada,True,False,only_old
+Oscar Wilde died in the city of,128,Paris,270,Guangzhou,False,False,neither
+The chief executive officer of Twitter is,109,Jack Dorsey,275,Bernard Arnault,True,False,only_old
+The Prime Minister of Sweden is,82,Stefan Löfven,276,Pedro Pierluisi,True,True,both
+SteamOS was developed by,238,Valve Corporation,277,ABB Group,True,True,both
+Slovakia national football team is associated with the sport of,18,association football,279,cricket,True,True,both
+India is located in the continent of,228,Asia,280,Africa,True,True,both
+The type of music that Dana International plays is,243,pop music,281,Australian hip hop,True,True,both
+Pius XII died in the city of,117,Castel Gandolfo,283,Wolverhampton,True,True,both
+Aladdin Sane was performed by,25,David Bowie,285,Yves Montand,True,True,both
+Methodism was founded by,218,John Wesley,287,Joseph Goebbels,True,True,both
+The official language of United States of America is,242,American English,295,German,True,True,both
+The type of music that Michael Mantler plays is,289,jazz,298,post-punk,True,True,both
+Sable is a citizen of,244,United States of America,299,Czech Republic,True,True,both
+The author of A Wizard of Earthsea is,10,Ursula K. Le Guin,301,Pius XII,True,True,both
+David Beckham is associated with the sport of,137,association football,303,cricket,False,True,only_new
+Shingon Buddhism was founded by,20,Kūkai,304,William Waynflete,True,True,both
+The author of The Witcher is,32,Andrzej Sapkowski,305,T. S. Eliot,True,True,both
+Thomas Kyd was born in the city of,0,London,306,Leeds,True,True,both
+The univeristy where Bill Frisell was educated is,144,Berklee College of Music,309,The University of the Arts,True,True,both
+goaltender is associated with the sport of,223,ice hockey,310,pesäpallo,True,True,both
+Surrey Senior Cup is associated with the sport of,291,association football,315,basketball,True,True,both
+Back to Black was performed by,288,Amy Winehouse,318,Frank Zappa,True,True,both
+Stephen McNeil works in the field of,152,politician,320,journalist,True,True,both
+placekicker is associated with the sport of,78,American football,321,rugby,True,True,both
+Amala Paul is a citizen of,294,India,322,Belgium,True,True,both
+Rand al'Thor was created by,66,Robert Jordan,326,Ferdowsi,False,True,only_new
+split-finger fastball is associated with the sport of,174,baseball,328,cricket,True,False,only_old
+Vijay Mallya is a citizen of,42,India,329,Papal States,True,False,only_old
+Aristotle's child is,191,Nicomachus,332,George Alexander Kohut,False,False,neither
+Robert Parish plays the position of,330,center,334,quarterback,False,False,neither
+Charles Darwin is married to,164,Emma Darwin,335,Amala Paul,True,False,only_old
+William Waynflete speaks the language of,214,English,336,Latin,True,False,only_old
+Born in the U.S.A. was performed by,65,Bruce Springsteen,337,Dana International,False,False,neither
+Adalbert of Prague is affiliated with the religion of,153,Catholic Church,339,atheism,True,False,only_old
+Sandy Alderson is associated with the sport of,215,baseball,340,association football,True,False,only_old
+The capital of India is,158,New Delhi,341,Grosseto,True,False,only_old
+Charles Messier is a citizen of,204,France,343,Iran,False,True,only_new
+The author of Starship Troopers is,27,Robert A. Heinlein,344,Daphne du Maurier,True,True,both
+Bo Ryan is associated with the sport of,194,basketball,346,association football,False,True,only_new
+basketball was created in the country of,216,United States of America,348,Soviet Union,True,True,both
+The name of the current head of the Council of People's Commissars government is,324,Vladimir Lenin,351,Tony Blair,True,True,both
+Club Nouveau was created in the country of,102,United States of America,353,Soviet Union,True,True,both
+The director of Madonna is,207,Guy Oseary,354,Narendra Modi,False,True,only_new
+The company that produced AP1000 is,196,Westinghouse Electric,356,Canadair,False,True,only_new
+Charlie Hebdo was created in the country of,155,France,358,Italy,True,True,both
+Transcendental Meditation movement was founded by,154,Maharishi Mahesh Yogi,360,Adalbert of Prague,True,True,both
+John Walsh is affiliated with the religion of,282,Catholic Church,361,Methodism,True,True,both
+cornerback is associated with the sport of,323,American football,362,field hockey,True,True,both
+Past Masters was performed by,251,The Beatles,364,Madonna,True,True,both
+The name of the current head of state in Soviet Union is,159,Mikhail Gorbachev,365,Elizabeth II,True,True,both
+Thomas Arne was born in the city of,342,London,366,Bengaluru,True,True,both
+Andrew Carnegie is a citizen of,338,United States of America,367,United Kingdom,False,True,only_new
+Moshe Kahlon works in the field of,134,politician,368,soldier,False,True,only_new
+Nicolae Ceaușescu is married to,58,Elena Ceaușescu,369,Wilhelm II,False,True,only_new
+Buddhism was founded by,67,Gautama Buddha,370,Mekere Morauta,False,True,only_new
+John Keats died in the city of,206,Rome,372,Leipzig,False,True,only_new
+Imelda Marcos is affiliated with the religion of,248,Catholicism,374,atheism,True,True,both
+New Firm is associated with the sport of,296,association football,376,baseball,True,True,both
+baseball was created in the country of,160,United States of America,382,Japan,True,True,both
+The official language of Moscow is,89,Russian,383,German,True,True,both
+F-22 Raptor was developed by,274,Lockheed Martin,384,Boeing,False,True,only_new
+Ron Dennis is employed by,47,McLaren Automotive,385,Pakistan International Airlines,True,True,both
+Ferdinand von Richthofen is a citizen of,24,Germany,386,Canada,True,True,both
+The capital of Australia is,284,Canberra,388,Oderzo,True,True,both
+association football was created in the country of,272,England,389,Italy,False,True,only_new
+Vito Corleone was created by,256,Mario Puzo,390,Nobuhiro Watsuki,True,True,both
+The director of American Broadcasting Company is,64,Bob Iger,392,Ernst Heinkel,False,True,only_new
+The chief executive officer of Boeing is,136,Dennis Muilenburg,393,Adel al-Jubeir,False,True,only_new
+Alan Jay Lerner died in the city of,170,New York City,394,"Mansourah, Algeria",True,False,only_old
+The capital of United States of America is,247,"Washington, D.C.",396,Harrisville,True,False,only_old
+The author of The Marriage of Figaro is,271,Pierre Beaumarchais,398,Thomas Kyd,False,False,neither
+The univeristy where Lou Reed was educated is,286,Syracuse University,399,Fordham University,True,False,only_old
+The author of Sidereus Nuncius is,124,Galileo Galilei,401,Samuel Beckett,False,False,neither
+rap rock was created in the country of,359,United States of America,403,Russian Empire,True,False,only_old
+Carlos Gómez is associated with the sport of,81,baseball,405,basketball,True,False,only_old
+The chief executive officer of ABB Group is,347,Ulrich Spiesshofer,408,Bernard Arnault,True,True,both
+The headquarters of University of Bucharest is,173,located in the city of Bucharest,409,located in the city of Ankara,True,True,both
+Natalie Portman is affiliated with the religion of,68,Judaism,410,interdenominational organization,False,True,only_new
+Karen Armstrong is affiliated with the religion of,266,Catholic Church,412,Church of Scotland,False,True,only_new
+The type of music that John McVie plays is,90,rock music,415,rap rock,True,True,both
+midfielder is associated with the sport of,325,association football,416,sumo,True,True,both
+Steve Sax is associated with the sport of,35,baseball,417,association football,True,True,both
+Tunisia national football team is associated with the sport of,235,association football,418,basketball,True,True,both
+Sophia Hawthorne is married to,407,Nathaniel Hawthorne,420,Joan Didion,True,True,both
+Stephen Crane is famous for,72,The Red Badge of Courage,423,Charlie Hebdo,False,True,only_new
+Tony Blair is married to,141,Cherie Blair,424,Alan Jay Lerner,True,True,both
+Hermione Granger was performed by,413,Emma Watson,425,Kylie Minogue,True,True,both
+The Vampyre was written in the language of,278,English,426,German,True,True,both
+Joe Hockey is a citizen of,129,Australia,427,Italy,False,True,only_new
+The director of British Broadcasting Corporation is,7,"Tony Hall, Baron Hall of Birkenhead",428,Narendra Modi,True,True,both
+The author of Sketches by Boz is,327,Charles Dickens,430,Sigmund Freud,True,True,both
+Rogério Ceni plays the position of,6,goalkeeper,434,flanker,True,True,both
+Germany is located in the continent of,41,Europe,435,Africa,True,True,both
+Le Petit Parisien was created in the country of,257,France,436,Germany,True,True,both
+The official language of Japan is,240,Japanese,439,Swedish,True,True,both
+Canada is located in the continent of,56,North America,440,Asia,False,True,only_new
+Colin Irwin is a citizen of,55,United Kingdom,441,Israel,False,True,only_new
+Malaysia is located in the continent of,373,Asia,442,Antarctica,True,True,both
+The director of The Beatles is,236,Brian Epstein,443,Joe Hockey,True,True,both
+The chairperson of Congolese Party of Labour is,54,Denis Sassou-Nguesso,445,Stephen McNeil,False,True,only_new
+Alta IF is associated with the sport of,19,association football,446,baseball,True,True,both
+The capital of Romania is,185,Bucharest,449,Rajanpur,False,True,only_new
+Olga of Kiev died in the city of,125,Kyiv,450,Rodez,False,True,only_new
+Gennady Rozhdestvensky died in the city of,292,Moscow,451,United States of America,True,True,both
+Roy Rogers is married to,447,Dale Evans,452,John McVie,True,True,both
+The univeristy where Wilhelm II was educated is,349,University of Bonn,453,Baldwin Wallace University,True,True,both

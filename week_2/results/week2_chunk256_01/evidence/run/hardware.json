@@ -1,0 +1,13 @@
+{
+  "gpu": "NVIDIA L4",
+  "gpu_GiB": 22.0343017578125,
+  "torch": "2.14.1+cu130",
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "cuda": "13.0",
+  "bitsandbytes": "0.50.2",
+  "gpu_compute_capability": [
+    8,
+    9
+  ],
+  "nf4_preflight": "passed"
+}

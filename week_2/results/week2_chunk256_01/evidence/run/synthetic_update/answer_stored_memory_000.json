@@ -1,0 +1,21 @@
+{
+  "example_id": "synthetic_update",
+  "condition": "stored_memory",
+  "question_index": 0,
+  "question": "Where does Ada currently live?",
+  "answers": [
+    "Rome"
+  ],
+  "generation": {
+    "text": "Rome",
+    "input_tokens": 327,
+    "output_tokens": 3,
+    "seconds": 0.27061154100010754,
+    "peak_allocated_GiB": 2.607302188873291,
+    "peak_reserved_GiB": 8.333984375,
+    "hit_output_limit": false,
+    "rendered_prompt": "<|im_start|>system\nAnswer using only the supplied knowledge. If it does not contain the answer, say unknown.<|im_end|>\n<|im_start|>user\n[Knowledge Pool]\nCore memory:\nThe user has provided information about Ada living in Rome. The assistant is tasked with maintaining a summary of the user's activities and a set of classification rules based on the provided information.\n\nsemantic memory:\n615b: Ada lives in Paris.\n919c: Ben likes chess.\n1059: Ada now lives in Rome.\n\nepisodic memory:\n05eb: At timestamp t, user provided information about Ada living in Paris.\n46e2: At timestamp t, user provided information about Ben liking chess.\n564b: At timestamp t, user provided information about Ada living in Rome.\n\nPretend you are a knowledge management system. Each fact in the knowledge pool is provided with a serial number at the beginning, and the newer fact has larger serial number. \n You need to solve the conflicts of facts in the knowledge pool by finding the newest fact with larger serial number. You need to answer a question based on this rule. You should give a very concise answer without saying other words for the question **only** from the knowledge pool you have memorized rather than the real facts in real world. \n\nFor example:\n\n [Knowledge Pool] \n\n Question: Based on the provided Knowledge Pool, what is the name of the current president of Russia? \nAnswer: Donald Trump \n\n Now Answer the Question: Based on the provided Knowledge Pool, Where does Ada currently live? \nAnswer:<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  },
+  "exact_match": 1.0,
+  "substring_exact_match": 1.0
+}
