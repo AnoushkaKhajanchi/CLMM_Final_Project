@@ -1,14 +1,30 @@
 import unittest,sys,json,ast
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from protocol import strict_calls,retrieve_entries,writer_suffix,diagnostic_cases,reader_messages,require_reader_controls
+from protocol import strict_calls,retrieve_entries,writer_suffix,diagnostic_cases,reader_messages,require_reader_controls,numbered_lines
 ROOT=Path(__file__).resolve().parents[1]
 class ProtocolTests(unittest.TestCase):
  def test_reject_truncated_json(self):
   good={'name':'new_memory_insert','arguments':'{"memory_type":"semantic_memory","content":"a"}'}
   bad={'name':'new_memory_insert','arguments':'{"memory_type":"semantic_memory","content":"Urs'}
-  a,r=strict_calls([{'function_call':good},{'function_call':bad}])
-  self.assertEqual(len(a),1);self.assertEqual(len(r),1)
+  a,r,rep=strict_calls([{'function_call':good},{'function_call':bad}])
+  self.assertEqual(len(a),1);self.assertEqual(len(r),1);self.assertEqual(rep,[])
+ def test_repair_bracket_typo_keeps_every_fact(self):
+  # Seen in run week3_dev_memalpha_baseline_locked_r2_01: whole-chunk notes closed with "] not "}.
+  typo={'name':'new_memory_insert','arguments':'{"memory_type": "semantic_memory", "content": "1. Ada lives in Rome.\\n2. Ben likes chess."]'}
+  a,r,rep=strict_calls([{'function_call':typo}])
+  self.assertEqual((len(a),len(r),len(rep)),(1,0,1))
+  self.assertEqual(a[0]['arguments']['content'],'1. Ada lives in Rome.\n2. Ben likes chess.')
+ def test_retrieval_covers_every_incoming_fact(self):
+  # Ten changed facts in one chunk: each old note must be offered (a fixed top-6 could not).
+  people=['Ada','Ben','Cy','Dot','Eve','Fay','Gus','Hal','Ivy','Jo']
+  state={'core':'','semantic':[{f'id{i}':f'[source_fact_id={i}] {p} lives in Paris.'} for i,p in enumerate(people)]+[{'blk':'\n'.join(f'[source_fact_id={30+i}] Person{i} likes chess.' for i in range(16))}],'episodic':[]}
+  chunk='\n'.join(f'{50+i}. {p} lives in Rome.' for i,p in enumerate(people))
+  ids={c['memory_id'] for c in retrieve_entries(state,chunk)}
+  self.assertTrue({f'id{i}' for i in range(10)}<=ids)
+ def test_provenance_tag_anywhere_on_line(self):
+  state={'semantic':[{'a':'[source_fact_id=1] Ada lives in Rome.\nBen likes chess. [source_fact_id=2]\nNo tag here.'}]}
+  self.assertEqual(numbered_lines(state)['annotated_lines'],2)
  def test_hidden_retrieval_preserves_whole_note(self):
   state={'core':'','semantic':[{'old':'[source_fact_id=1] Ada lives in Paris.\n[source_fact_id=2] Ben likes chess.'}]+[{str(i):f'Person{i} likes gardening.'} for i in range(8)],'episodic':[]}
   found=retrieve_entries(state,'20. Ada now lives in Rome.')
@@ -24,7 +40,9 @@ class ProtocolTests(unittest.TestCase):
  def test_notebooks(self):
   protocol=(ROOT/'scripts/protocol.py').read_text()
   for p in (ROOT/'notebooks').glob('*.ipynb'):
-   n=json.loads(p.read_text());code='\n'.join(c['source'] for c in n['cells'] if c['cell_type']=='code')
+   n=json.loads(p.read_text())
+   for c in n['cells']:c['source']=''.join(c['source'])  # Jupyter allows a string or a list of lines
+   code='\n'.join(c['source'] for c in n['cells'] if c['cell_type']=='code')
    for c in n['cells']:
     if c['cell_type']=='code':ast.parse(c['source']);self.assertEqual(c['outputs'],[])
    self.assertIn('MAX_INPUT_PLUS_OUTPUT = 16384',code)

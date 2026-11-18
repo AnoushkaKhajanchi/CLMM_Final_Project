@@ -14,43 +14,82 @@ Unrelated facts and legitimately coexisting facts must remain. If a note contain
 edit only the conflicting part and preserve all other lines and their original numbers.
 Use the actual memory ID for update/delete tools. Do not delete a whole multi-fact note to remove one fact.'''
 
+def parse_arguments(raw):
+    """Parse tool-call JSON. Returns (arguments, was_repaired).
+
+    Repairs exactly one observed writer typo: a complete object closed with ']'
+    instead of '}' (e.g. a long multi-fact note ending '..."]'). Rejecting it would
+    drop every fact in that note. Anything else that is not valid JSON, including
+    output cut off mid-call, still raises and is rejected."""
+    try:
+        return json.loads(raw), False
+    except json.JSONDecodeError:
+        text = raw.rstrip()
+        if text.endswith(']'):
+            return json.loads(text[:-1] + '}'), True
+        raise
+
 def strict_calls(messages):
-    accepted, rejected = [], []
+    """Returns (accepted, rejected, repaired). Repaired calls are also accepted."""
+    accepted, rejected, repaired = [], [], []
     for message in messages:
         call = message.get('function_call')
         if not call:
             continue
         try:
             args = call['arguments']
+            was_repaired = False
             if isinstance(args, str):
-                args = json.loads(args)
+                args, was_repaired = parse_arguments(args)
             if not isinstance(args, dict):
                 raise ValueError('Arguments must be a JSON object')
             if call['name'] not in {'new_memory_insert', 'memory_update', 'memory_delete', 'search_memory'}:
                 raise ValueError('Unknown tool')
             accepted.append({'name': call['name'], 'arguments': args})
+            if was_repaired:
+                repaired.append({'name': call['name'], 'raw_arguments': call['arguments']})
         except (ValueError, KeyError, TypeError) as error:
             rejected.append({'raw_call': call, 'reason': str(error)})
-    return accepted, rejected
+    return accepted, rejected, repaired
 
 def tokens(text):
     return set(re.findall(r'[a-z]+', text.lower())) - {'the','is','in','of','a','an','and','with','to','source','fact','id'}
 
-def retrieve_entries(state, chunk, k=6):
-    """Lexical overlap, ranked per incoming line then globally; includes whole notes.
-    No gold conflict parser, answers, or future facts are used. Zero-overlap entries are excluded.
+def retrieve_entries(state, chunk, per_fact=2):
+    """For EACH incoming fact line, find the `per_fact` existing notes whose best-matching
+    line has the highest word overlap (Jaccard); return the union as whole notes with real IDs.
+
+    Matching is line by line, so a large multi-fact note neither dominates nor hides its
+    lines. A fixed total (the earlier k=6 per ~16-fact chunk) showed the old version of a
+    changed fact for only ~54% of conflicts in saved runs; 2 per fact showed ~99%.
+    No gold conflict parser, answers, or future facts are used. Zero-overlap notes are excluded.
     """
-    queries = [tokens(line) for line in chunk.splitlines() if line.strip()]
-    candidates = []
+    lines = []
     for kind in ['semantic', 'episodic']:
         for entry in state[kind]:
             for mid, content in entry.items():
-                words = tokens(content)
-                score = max((len(q & words) / max(1, len(q)) for q in queries), default=0)
-                if score:
-                    candidates.append({'memory_type': kind+'_memory', 'memory_id': mid,
-                                       'content': content, 'retrieval_score': score})
-    return sorted(candidates, key=lambda e: (-e['retrieval_score'], e['memory_type'], e['memory_id']))[:k]
+                for line in content.splitlines():
+                    words = tokens(line)
+                    if words:
+                        lines.append((kind, mid, content, words))
+    picked = {}
+    for query in (tokens(line) for line in chunk.splitlines() if line.strip()):
+        if not query:
+            continue
+        scored = sorted(((len(query & w) / len(query | w), kind, mid, content)
+                         for kind, mid, content, w in lines if query & w),
+                        key=lambda s: (-s[0], s[1], s[2]))
+        seen = []
+        for score, kind, mid, content in scored:
+            if mid in seen:
+                continue
+            seen.append(mid)
+            if mid not in picked or picked[mid]['retrieval_score'] < score:
+                picked[mid] = {'memory_type': kind+'_memory', 'memory_id': mid,
+                               'content': content, 'retrieval_score': round(score, 3)}
+            if len(seen) == per_fact:
+                break
+    return sorted(picked.values(), key=lambda e: (-e['retrieval_score'], e['memory_type'], e['memory_id']))
 
 def writer_suffix(state, chunk, condition):
     if condition not in {'baseline','prompted','retrieval'}:
@@ -66,7 +105,8 @@ def writer_suffix(state, chunk, condition):
 def numbered_lines(state):
     """Diagnostics only: counts IDs and malformed/missing fact-line markers, not semantic correctness."""
     lines = [line for e in state['semantic'] for text in e.values() for line in text.splitlines() if line.strip()]
-    annotated = [line for line in lines if re.match(r'^\s*\[source_fact_id=\d+\]', line)]
+    # The writer may put the tag at the start or the end of a line; both count.
+    annotated = [line for line in lines if re.search(r'\[source_fact_id=\d+\]', line)]
     return {'semantic_nonempty_lines': len(lines), 'annotated_lines': len(annotated),
             'missing_marker_lines': len(lines)-len(annotated)}
 
