@@ -29,14 +29,18 @@ def normalize(text):
 
     The writer sometimes keeps the serial number ("342. Thomas Arne ...") and
     sometimes leaves a stray quote at the end ("... English.'"). Both are
-    ignored here; any other wording change still counts as not stored.
+    ignored here, as is a "[source_fact_id=N]" tag (Week 3 prompt); any other
+    wording change still counts as not stored.
     """
+    text = re.sub(r"\s*\[source_fact_id=\d+\]\s*", " ", text)
     text = re.sub(r"^\d+\.\s*", "", text.strip())
     return text.strip(" .'\"").lower()
 
 
 def is_complete_json(arguments):
     """A call is incomplete if its arguments were cut off mid-JSON."""
+    if isinstance(arguments, dict):  # Week 3 notebook saves parsed arguments
+        return True
     try:
         json.loads(arguments)
         return True
