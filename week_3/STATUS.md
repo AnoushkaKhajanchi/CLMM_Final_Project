@@ -49,17 +49,33 @@ Mem-α sometimes saves a whole batch of facts as one big note and occasionally e
 
 Think of a mail room that throws away any letter with a smudged envelope. Mem-α wrote the notes fine; the notebook discarded them. **We didn't change Mem-α. We fixed the mail room:** it now repairs the typo and logs it. On Farah's saved run, all 13 thrown-away notes (198 facts) are recovered.
 
-The same strict check is in Anoushka's other notebooks and `scripts/protocol.py`, so they should get the same fix.
+The fix lives in `scripts/protocol.py` and is copied into **all four** Week 3 notebooks. It repairs only that one typo; a note cut off mid-sentence is still rejected, so no half-facts are saved.
+
+### 6. Tune the extension before running it (Dominick, this branch)
+The extension code was already in Anoushka's framework. Two changes before we spend a GPU run on it:
+- **Show related notes for every fact.** It used to show 6 notes per batch of ~16 facts, which included the old version of a changed fact only about 54% of the time. It now shows the 2 best-matching notes **per fact**: 151 of 152 on Week 2 memory, and 134 of 134 / 138 of 139 on Farah's run. The prompt gets longer but stays well under its limit.
+- **Added an instruction-only run** (`memalpha_prompted`): the conflict instruction without the related notes. Comparing it with the full extension tells us whether *seeing* old notes or being *told to check* is what helps.
+
+Also fixed: the fact-number counter missed tags at the end of a line and reported 0. Mem-α actually kept the number on 100% of lines.
 
 ---
 
+## The runs, and what each one answers
+
+All runs use the [same notebook](notebooks/CLMM_Week3_Integrated_Development_R2.ipynb), the same reader and the same 20 questions per set. Only the note-taker changes, through one setting:
+
+| Run (`RUN_VARIANT`) | Note-taker | Question it answers |
+|---|---|---|
+| `qwen_baseline` | Plain Qwen, no memory training | How well does a regular model take notes? |
+| `memalpha_baseline` | Mem-α as-is | Does Mem-α's training beat a regular model? |
+| `memalpha_prompted` | Mem-α + "check for conflicts" instruction | Does telling it to check help? |
+| `memalpha_retrieval` | Mem-α + instruction + related old notes shown | Does showing old notes fix outdated facts? (the extension) |
+
 ## What's next, in order
 
-1. **Writer baseline** (Dominick): plain Qwen as the note-taker (`RUN_VARIANT = 'qwen_baseline'`). This tells us whether Mem-α's memory training helps at all.
-2. **Rerun the Mem-α baseline** with the fix (`memalpha_baseline`), since the first run lost facts.
-3. **Run the extension** (`memalpha_retrieval`). Two suggested tweaks first:
-    - Show a few related notes **per fact**. It's currently 6 per batch of ~16 facts. On Week 2 memory, 6 per batch shows the old fact for 82 of 152 conflicts; 2–3 per fact shows it for about 151.
-    - Add a run with **only** the conflict instruction (`prompted`), to tell whether seeing old notes or being told to check is what helps.
-4. **Compare all three** with the same reader, plus the outdated-fact counter (`week_2/scripts/count_conflicts.py`), which doesn't depend on the reader.
+1. **Writer baseline** (Dominick): `qwen_baseline`.
+2. **Rerun the Mem-α baseline** with the fix: `memalpha_baseline`. The first run lost facts.
+3. **Run the extension:** `memalpha_prompted` and `memalpha_retrieval`.
+4. **Compare** with the reader's scores plus the outdated-fact counter (`week_2/scripts/count_conflicts.py`), which doesn't depend on the reader.
 
-Steps 1 and 2 use the same notebook with one setting changed.
+Each run takes about an hour on Colab. Earlier runs (`locked_r2_01`, `parserfix_01`) used older code, so don't mix their results with the new `v3_01` runs.
